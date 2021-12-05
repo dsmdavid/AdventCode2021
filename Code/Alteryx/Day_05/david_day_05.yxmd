@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="33">
       <GuiSettings>
-        <Position x="774" y="450" />
+        <Position x="702" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -12,15 +12,12 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="CountRecords.yxmc" />
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="690" y="462" />
+        <Position x="618" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -51,7 +48,7 @@
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="582" y="462" />
+        <Position x="510" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -70,7 +67,7 @@
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="486" y="474" />
+        <Position x="414" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -109,7 +106,7 @@ Replace([Field_1], ' -&gt; ',' '), ',',' '),1) &gt; GetW...</DefaultAnnotationTe
     </Node>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="126" y="642" />
+        <Position x="54" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -160,7 +157,7 @@ Replace([Field_1], ' -&gt; ',' '), ',',' '),1) &gt; GetW...</DefaultAnnotationTe
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="126" y="546" />
+        <Position x="54" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -184,9 +181,6 @@ Replace([Field_1], ' -&gt; ',' '), ',',' '),1) &gt; GetW...</DefaultAnnotationTe
           <DefaultAnnotationText>input1.txt</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: F:\Dropbox\python\AdventCode2021\Inputs\Day_05\input1.txt" type="V_String" />
@@ -197,7 +191,7 @@ Replace([Field_1], ' -&gt; ',' '), ',',' '),1) &gt; GetW...</DefaultAnnotationTe
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="354" y="642" />
+        <Position x="282" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -299,7 +293,7 @@ else 0 endif
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="582" y="642" />
+        <Position x="510" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -318,7 +312,7 @@ else 0 endif
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="690" y="642" />
+        <Position x="618" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -349,7 +343,7 @@ else 0 endif
     </Node>
     <Node ToolID="34">
       <GuiSettings>
-        <Position x="774" y="630" />
+        <Position x="702" y="330" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -358,15 +352,12 @@ else 0 endif
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="CountRecords.yxmc" />
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="486" y="354" width="348" height="60" />
+        <Position x="414" y="54" width="348" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -386,7 +377,7 @@ else 0 endif
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="486" y="558" width="348" height="60" />
+        <Position x="414" y="258" width="348" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -406,7 +397,7 @@ else 0 endif
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="294" y="354" width="108" height="96" />
+        <Position x="222" y="54" width="108" height="96" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -426,7 +417,7 @@ else 0 endif
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="294" y="726" width="108" height="96" />
+        <Position x="222" y="426" width="108" height="96" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -444,13 +435,13 @@ else 0 endif
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="35">
+    <Node ToolID="51">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="413" y="773" width="1057" height="381" />
+        <Position x="377" y="881" width="793" height="240" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Caption>Container 35</Caption>
+          <Caption>Container 51</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
           <Disabled value="True" />
           <Folded value="False" />
@@ -462,9 +453,240 @@ else 0 endif
         </Annotation>
       </Properties>
       <ChildNodes>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+            <Position x="498" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields fieldX="New_x1" fieldY="New_y1" />
+              <Mode>Double</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="402" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Numeric</FieldType>
+              <Fields orderChanged="False">
+                <Field name="x1" />
+                <Field name="y1" />
+                <Field name="x2" />
+                <Field name="y2" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>[_CurrentField_]/1000</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="Double" size="8" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[_CurrentField_]/1000</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+            <Position x="570" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields fieldX="New_x2" fieldY="New_y2" />
+              <Mode>Double</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="906" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine2_19112_c07cc7c240faf440925cbcd33619f249_\Engine_19112_755ed16c26bd7b40a47124b6f86117e7~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Map</DefaultTab>
+                  <Hints>
+                    <Map>
+                      <BaseMap>[No Base Map]</BaseMap>
+                    </Map>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="666" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ST_CreateLine([Centroid],[Centroid2])" field="line" size="536870911" type="SpatialObj" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[line = ST_CreateLine([Centroid],[Centroid2])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialMatch.SpatialMatch">
+            <Position x="762" y="990" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Target SpatialObj="line" />
+              <Universe SpatialObj="line" />
+              <Method method="Intersects" />
+              <SelectConfiguration>
+                <Configuration outputConnection="Matched">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Universe_Field_1" selected="True" rename="Universe_Field_1" input="Universe_" />
+                    <SelectField field="Universe_x1" selected="True" rename="Universe_x1" input="Universe_" />
+                    <SelectField field="Universe_y1" selected="True" rename="Universe_y1" input="Universe_" />
+                    <SelectField field="Universe_x2" selected="True" rename="Universe_x2" input="Universe_" />
+                    <SelectField field="Universe_y2" selected="True" rename="Universe_y2" input="Universe_" />
+                    <SelectField field="Universe_New_x1" selected="True" rename="Universe_New_x1" input="Universe_" />
+                    <SelectField field="Universe_New_y1" selected="True" rename="Universe_New_y1" input="Universe_" />
+                    <SelectField field="Universe_New_x2" selected="True" rename="Universe_New_x2" input="Universe_" />
+                    <SelectField field="Universe_New_y2" selected="True" rename="Universe_New_y2" input="Universe_" />
+                    <SelectField field="Universe_Centroid" selected="True" rename="Universe_Centroid" input="Universe_" />
+                    <SelectField field="Universe_Centroid2" selected="True" rename="Universe_Centroid2" input="Universe_" />
+                    <SelectField field="Universe_line" selected="True" rename="Universe_line" input="Universe_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+              <IntersectPoly value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>line Where Target Intersects Universe line</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialMatch" />
+        </Node>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="870" y="990" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Field_1] != [Universe_Field_1]</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Field_1] != [Universe_Field_1]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
+            <Position x="990" y="978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SpatialObj field="IntersectPoly" />
+              <SelectedItems>
+                <Item name="CentroidXY" />
+              </SelectedItems>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialInfo" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1086" y="978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="CentroidX" action="GroupBy" rename="CentroidX" />
+                <SummarizeField field="CentroidY" action="GroupBy" rename="CentroidY" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="341" y="485" width="1081" height="369" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 35</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+          <Caption>Container 35</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-            <Position x="438" y="906" />
+            <Position x="366" y="605" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -502,7 +724,7 @@ else 0 endif
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="534" y="906" />
+            <Position x="462" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -523,26 +745,9 @@ step_y = if y1 &lt; ...</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
-        <Node ToolID="4">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="630" y="905" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Expression>[step_x] * [step_y] = 0</Expression>
-              <Mode>Custom</Mode>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>[step_x] * [step_y] = 0</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-        </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-            <Position x="990" y="894" />
+            <Position x="858" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -570,7 +775,7 @@ tonumber(getword([Coord],1)) + [step_y])</Expression_Loop>
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-            <Position x="726" y="894" />
+            <Position x="594" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -590,7 +795,7 @@ tonumber(getword([Coord],1)) + [step_y])</Expression_Loop>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="822" y="822" />
+            <Position x="690" y="534" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -610,7 +815,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-            <Position x="894" y="822" />
+            <Position x="762" y="534" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -642,7 +847,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="1086" y="894" />
+            <Position x="954" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -661,7 +866,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="990" y="822" />
+            <Position x="858" y="534" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -682,7 +887,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1206" y="894" />
+            <Position x="1146" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -701,7 +906,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="1266" y="894" />
+            <Position x="1242" y="606" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -732,7 +937,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="16">
           <GuiSettings>
-            <Position x="1374" y="882" />
+            <Position x="1338" y="594" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -741,155 +946,12 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
           </Properties>
           <EngineSettings Macro="CountRecords.yxmc" />
         </Node>
-        <Node ToolID="17">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-            <Position x="1002" y="1038" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <UpdateField value="False" />
-              <UpdateField_Name />
-              <CreateField_Name>Coord</CreateField_Name>
-              <CreateField_Type>String</CreateField_Type>
-              <CreateField_Size>20</CreateField_Size>
-              <Expression_Init>tostring(x1 + [step_x]) + " " + tostring (y1+ [step_y])</Expression_Init>
-              <Expression_Cond>[Coord] != tostring(x2) + " " + tostring (y2)</Expression_Cond>
-              <Expression_Loop>tostring(
-tonumber(getword([Coord],0)) + [step_x])
-+ ' '
-+
-tostring(
-tonumber(getword([Coord],1)) + [step_y])</Expression_Loop>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
-        </Node>
-        <Node ToolID="18">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-            <Position x="738" y="1038" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FieldName>LineID</FieldName>
-              <StartValue>1</StartValue>
-              <FieldType>Int32</FieldType>
-              <FieldSize>6</FieldSize>
-              <Position>0</Position>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
-        </Node>
-        <Node ToolID="19">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="834" y="966" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="tostring([x1]) + ' ' + ToString([y1])" field="start" size="64" type="String" />
-                <FormulaField expression="tostring([x2]) + ' ' + ToString([y2])" field="end" size="64" type="String" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>start = tostring([x1]) + ' ' + ToString([y1])
-end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="20">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-            <Position x="906" y="966" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <ErrorWarn>Warn</ErrorWarn>
-              <KeyFields>
-                <Field field="LineID" />
-              </KeyFields>
-              <DataFields>
-                <Field field="LineID" selected="False" />
-                <Field field="Field1" selected="False" />
-                <Field field="x1" selected="False" />
-                <Field field="y1" selected="False" />
-                <Field field="x2" selected="False" />
-                <Field field="y2" selected="False" />
-                <Field field="step_x" selected="False" />
-                <Field field="step_y" selected="False" />
-                <Field field="start" selected="True" />
-                <Field field="end" selected="True" />
-                <Field field="*Unknown" selected="False" />
-              </DataFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
-        </Node>
-        <Node ToolID="21">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="1098" y="1038" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <ByName_ErrorMode>Warning</ByName_ErrorMode>
-              <ByName_OutputMode>All</ByName_OutputMode>
-              <Mode>ByName</Mode>
-              <SetOutputOrder value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-        </Node>
-        <Node ToolID="22">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1002" y="966" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Value" selected="True" rename="Coord" />
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1218" y="1038" />
+            <Position x="1146" y="738" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -908,7 +970,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="24">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="1278" y="1038" />
+            <Position x="1206" y="738" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -939,7 +1001,7 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="25">
           <GuiSettings>
-            <Position x="1386" y="1026" />
+            <Position x="1314" y="726" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -950,6 +1012,23 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
             </Annotation>
           </Properties>
           <EngineSettings Macro="CountRecords.yxmc" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1050" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[step_x] * [step_y] = 0</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[step_x] * [step_y] = 0</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
         </Node>
       </ChildNodes>
     </Node>
@@ -992,19 +1071,51 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
       <Destination ToolID="34" Connection="Input8" />
     </Connection>
     <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Universe" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Matched" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="True" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="2" Connection="Output" />
       <Destination ToolID="3" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="4" Connection="Input" />
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="18" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="4" Connection="True" />
       <Destination ToolID="8" Connection="Input" />
     </Connection>
     <Connection name="#2">
@@ -1033,7 +1144,11 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="13" Connection="Input" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
@@ -1043,34 +1158,6 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
       <Origin ToolID="14" Connection="True" />
       <Destination ToolID="16" Connection="Input8" />
     </Connection>
-    <Connection name="#2">
-      <Origin ToolID="17" Connection="Output" />
-      <Destination ToolID="21" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="22" Connection="Output" />
-      <Destination ToolID="21" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="18" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="18" Connection="Output" />
-      <Destination ToolID="19" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="20" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="20" Connection="Output" />
-      <Destination ToolID="22" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="21" Connection="Output" />
-      <Destination ToolID="23" Connection="Input" />
-    </Connection>
     <Connection>
       <Origin ToolID="23" Connection="Output" />
       <Destination ToolID="24" Connection="Input" />
@@ -1078,6 +1165,10 @@ end = tostring([x2]) + ' ' + ToStr...</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="24" Connection="True" />
       <Destination ToolID="25" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="True" />
+      <Destination ToolID="13" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
