@@ -161,7 +161,7 @@
     </Node>
     <Node ToolID="41">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="282" y="270" />
+        <Position x="246" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -247,7 +247,8 @@ ToNumber(GetWord([output], 1))),20,"0")
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <AnnotationText>generate days</AnnotationText>
+          <DefaultAnnotationText>generate days</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -255,7 +256,7 @@ ToNumber(GetWord([output], 1))),20,"0")
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="366" y="270" />
+        <Position x="354" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -265,6 +266,7 @@ getword([output],0) = "256"</Expression>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>filter days 80 &amp; 256</AnnotationText>
           <DefaultAnnotationText>getword([output],0) = "80" ||
 getword([output],0) = "256"</DefaultAnnotationText>
           <Left value="False" />
@@ -274,7 +276,7 @@ getword([output],0) = "256"</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="438" y="258" />
+        <Position x="450" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -284,6 +286,7 @@ getword([output],0) = "256"</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>sum fishes</AnnotationText>
           <DefaultAnnotationText>result = tonumber(GetWord([output],1)) +
 tonumber(GetWord([output],2)) +
 tonumbe...</DefaultAnnotationText>
