@@ -819,7 +819,7 @@ diff = [Max_Field_1] - [RowCount]
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Text>Median (part-1)</Text>
+          <Text>Median (part-1) * fuel</Text>
           <Font name="Arial" size="15.75" style="0" />
           <TextColor name="Black" />
           <FillColor name="White" />
@@ -840,6 +840,26 @@ diff = [Max_Field_1] - [RowCount]
       <Properties>
         <Configuration>
           <Text>2 Closest values to mean</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="942" y="198" width="384" height="52" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Find which one and compute fuel</Text>
           <Font name="Arial" size="15.75" style="0" />
           <TextColor name="Black" />
           <FillColor name="White" />
