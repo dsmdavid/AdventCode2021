@@ -1,0 +1,1173 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="270" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Area</Name>
+          <Abbrev>A</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="8" />
+              <Fields>
+                <Field name="row" />
+                <Field name="col" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>-1</c>
+                  <c>-1</c>
+                </r>
+                <r>
+                  <c>-1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>-1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>-1</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>-1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="row" source="TextInput:" type="Int16" />
+            <Field name="col" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="366" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Field_1]+1&#xA;" field="Field_1" size="1" type="Byte" />
+            <FormulaField expression="0" field="Flashed" size="1" type="Bool" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Field_1 = [Field_1]+1
+
+Flashed = 0
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="Formula: [Field_1]+1&#xA;" type="Byte" />
+            <Field name="ColID" source="TextInput:" type="Byte" />
+            <Field name="Flashed" source="Formula: 0" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="642" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="642" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="198" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Data</Name>
+          <Abbrev>D</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="100" />
+              <Fields>
+                <Field name="RowID" />
+                <Field name="Field_1" />
+                <Field name="ColID" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>5</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>4</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>4</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>2</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>7</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>4</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>5</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>8</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>5</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>4</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>7</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>1</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>1</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>5</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>2</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>6</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>5</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>5</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>6</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>1</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>7</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>3</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>6</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>3</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>3</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>6</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>6</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>6</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>3</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>5</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>7</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>3</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>8</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>5</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>4</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>7</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>8</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>4</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>6</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>7</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>5</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>4</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>6</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>4</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>5</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>2</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>7</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>6</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>8</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>4</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>7</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>2</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>6</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>8</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>8</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>2</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>8</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>8</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>4</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>8</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>6</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>8</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>8</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>5</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>5</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>10</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>5</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>2</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>8</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>3</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>7</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>5</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>1</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>5</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>2</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>6</c>
+                  <c>10</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>D Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="ColID" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings>
+        <Position x="546" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Flashes (4)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Flashed">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="End">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="iter">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="ColID" source="TextInput:" type="Byte" />
+            <Field name="Flashed" source="Formula: 0" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="F:\Dropbox\python\AdventCode2021\Code\Alteryx\Day_11\Flashes.yxmc" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="786" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: (Multiple Sources)" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="858" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RowID" selected="True" />
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="ColID" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="966" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="798" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]+1" field="iteration" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[iteration = [Engine.IterationNumber]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+            <Field name="iteration" source="Formula: [Engine.IterationNumber]+1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1098" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output14</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1014" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="iteration" action="GroupBy" rename="iteration" />
+            <SummarizeField field="RowID" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="iteration" source="Summarize: GroupBy - iteration" type="Int32" />
+            <Field name="Count" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="iteration" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="906" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsTrue</Operator>
+            <Field>Flashed</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-11 10:34:14</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-11 10:34:14</StartDate>
+              <EndDate>2021-12-11 10:34:14</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Flashed] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+            <Field name="iteration" source="Formula: [Engine.IterationNumber]+1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Field_1" source="Formula: 0 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="ColID" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+            <Field name="Flashed" source="Formula: 1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Bool" />
+            <Field name="iteration" source="Formula: [Engine.IterationNumber]+1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="786" y="318" width="360" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Count Flashes this step</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="294" y="138" width="192" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Gain 1 activation</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="510" y="138" width="192" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Resolve flashes</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="45" Connection="Area" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="45" Connection="Data" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Flashed" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="End" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="True" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (14)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Steps</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="5a4952d5-8ada-4c06-a04f-6f3c22562058" />
+      <Telemetry>
+        <PreviousWorkflowId value="b8eaa3bc-2a26-472a-99f4-1d05fd49c8a5" />
+        <OriginWorkflowId value="b8eaa3bc-2a26-472a-99f4-1d05fd49c8a5" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (11)</Name>
+          <ToolId value="11" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (12)</Description>
+              <Name>Macro Output (12)</Name>
+              <ToolId value="12" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (14)</Description>
+              <Name>Macro Output (14)</Name>
+              <ToolId value="14" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Data</Input>
+        <Output>iter</Output>
+        <IterationLimit value="1000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="14" Selected="True" />
+        <Tool ToolId="45" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
