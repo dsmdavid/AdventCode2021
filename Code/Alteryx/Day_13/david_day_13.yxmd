@@ -1,0 +1,1731 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="20" />
+          <Fields>
+            <Field name="Field_1" />
+          </Fields>
+          <Data>
+            <r>
+              <c>6,10</c>
+            </r>
+            <r>
+              <c>0,14</c>
+            </r>
+            <r>
+              <c>9,10</c>
+            </r>
+            <r>
+              <c>0,3</c>
+            </r>
+            <r>
+              <c>10,4</c>
+            </r>
+            <r>
+              <c>4,11</c>
+            </r>
+            <r>
+              <c>6,0</c>
+            </r>
+            <r>
+              <c>6,12</c>
+            </r>
+            <r>
+              <c>4,1</c>
+            </r>
+            <r>
+              <c>0,13</c>
+            </r>
+            <r>
+              <c>10,12</c>
+            </r>
+            <r>
+              <c>3,4</c>
+            </r>
+            <r>
+              <c>3,0</c>
+            </r>
+            <r>
+              <c>8,4</c>
+            </r>
+            <r>
+              <c>1,10</c>
+            </r>
+            <r>
+              <c>2,14</c>
+            </r>
+            <r>
+              <c>8,10</c>
+            </r>
+            <r>
+              <c>9,0</c>
+            </r>
+            <r>
+              <c>fold along y=7</c>
+            </r>
+            <r>
+              <c>fold along x=5</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="222" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <RegExExpression value="(\d+),(\d+)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>Field_1</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="x" type="Int64" size="8" />
+            <Field field="y" type="Int64" size="8" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="318" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([x])
+&amp;&amp;
+!IsNull([Field_1])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsNull([x])
+&amp;&amp;
+!IsNull([Field_1])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="510" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if &#xA;Right([1],1) = 'x'&#xA;then tonumber([2])&#xA;else Null()&#xA;endif" field="fx" size="8" type="Int64" />
+            <FormulaField expression="if &#xA;Right([1],1) = 'y'&#xA;then tonumber([2])&#xA;else Null()&#xA;endif" field="fy" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>fx = if 
+Right([1],1) = 'x'
+then tonumber([2])
+else Null()
+endif
+fy = if 
+Right(...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="414" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="=" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="798" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_x" selected="True" input="Target_" />
+                <SelectField field="Target_y" selected="True" input="Target_" />
+                <SelectField field="Source_Field_1" selected="False" rename="Source_Field_1" input="Source_" />
+                <SelectField field="Source_x" selected="False" rename="Source_x" input="Source_" />
+                <SelectField field="Source_y" selected="False" rename="Source_y" input="Source_" />
+                <SelectField field="Source_fx" selected="True" input="Source_" />
+                <SelectField field="Source_fy" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="894" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if IsNull([fy]) then [y]&#xA;else&#xA;	if [y] &gt; [fy]&#xA;		then [fy] - ([y] - [fy])&#xA;	elseif [y] &lt; [fy]&#xA;		then [y]&#xA;	else null() //folding line&#xA;	endif&#xA;endif" field="new_y" size="8" type="Int64" />
+            <FormulaField expression="if IsNull([fx]) then [x]&#xA;else&#xA;	if [x] &gt; [fx]&#xA;		then [fx] - ([x] - [fx])&#xA;	elseif [x] &lt; [fx]&#xA;		then [x]&#xA;	else null() //folding line&#xA;	endif&#xA;endif" field="new_x" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>new_y = if IsNull([fy]) then [y]
+else
+	if [y] &gt; [fy]
+		then [fy] - ([y] - [fy])
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="990" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([new_y]) &amp;&amp; !IsNull([new_x])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([new_y]) &amp;&amp; !IsNull([new_x])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1086" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="new_y" action="GroupBy" rename="y" />
+            <SummarizeField field="new_x" action="GroupBy" rename="x" />
+            <SummarizeField field="new_x" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1182" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_y" selected="True" input="Target_" />
+                <SelectField field="Target_x" selected="True" input="Target_" />
+                <SelectField field="Source_Field_1" selected="False" rename="Source_Field_1" input="Source_" />
+                <SelectField field="Source_x" selected="False" rename="Source_x" input="Source_" />
+                <SelectField field="Source_y" selected="False" rename="Source_y" input="Source_" />
+                <SelectField field="Source_fx" selected="True" input="Source_" />
+                <SelectField field="Source_fy" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1278" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if IsNull([fy]) then [y]&#xA;else&#xA;	if [y] &gt; [fy]&#xA;		then [fy] - ([y] - [fy])&#xA;	elseif [y] &lt; [fy]&#xA;		then [y]&#xA;	else null() //folding line&#xA;	endif&#xA;endif" field="new_y" size="8" type="Int64" />
+            <FormulaField expression="if IsNull([fx]) then [x]&#xA;else&#xA;	if [x] &gt; [fx]&#xA;		then [fx] - ([x] - [fx])&#xA;	elseif [x] &lt; [fx]&#xA;		then [x]&#xA;	else null() //folding line&#xA;	endif&#xA;endif" field="new_x" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>new_y = if IsNull([fy]) then [y]
+else
+	if [y] &gt; [fy]
+		then [fy] - ([y] - [fy])
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1374" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([new_y]) &amp;&amp; !IsNull([new_x])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([new_y]) &amp;&amp; !IsNull([new_x])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1470" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="new_y" action="GroupBy" rename="y" />
+            <SummarizeField field="new_x" action="GroupBy" rename="x" />
+            <SummarizeField field="new_x" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="594" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1566" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" type="WString" size="21" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1662" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="x" />
+          </GroupFields>
+          <HeaderField field="y" />
+          <DataField field="Count" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="CrossTab:Group:Concat:" type="Int64" />
+            <Field name="_882" size="2048" source="CrossTab:Header:y:-882:Concat:" type="V_WString" />
+            <Field name="_879" size="2048" source="CrossTab:Header:y:-879:Concat:" type="V_WString" />
+            <Field name="_878" size="2048" source="CrossTab:Header:y:-878:Concat:" type="V_WString" />
+            <Field name="_877" size="2048" source="CrossTab:Header:y:-877:Concat:" type="V_WString" />
+            <Field name="_873" size="2048" source="CrossTab:Header:y:-873:Concat:" type="V_WString" />
+            <Field name="_872" size="2048" source="CrossTab:Header:y:-872:Concat:" type="V_WString" />
+            <Field name="_871" size="2048" source="CrossTab:Header:y:-871:Concat:" type="V_WString" />
+            <Field name="_868" size="2048" source="CrossTab:Header:y:-868:Concat:" type="V_WString" />
+            <Field name="_865" size="2048" source="CrossTab:Header:y:-865:Concat:" type="V_WString" />
+            <Field name="_864" size="2048" source="CrossTab:Header:y:-864:Concat:" type="V_WString" />
+            <Field name="_863" size="2048" source="CrossTab:Header:y:-863:Concat:" type="V_WString" />
+            <Field name="_861" size="2048" source="CrossTab:Header:y:-861:Concat:" type="V_WString" />
+            <Field name="_860" size="2048" source="CrossTab:Header:y:-860:Concat:" type="V_WString" />
+            <Field name="_859" size="2048" source="CrossTab:Header:y:-859:Concat:" type="V_WString" />
+            <Field name="_858" size="2048" source="CrossTab:Header:y:-858:Concat:" type="V_WString" />
+            <Field name="_857" size="2048" source="CrossTab:Header:y:-857:Concat:" type="V_WString" />
+            <Field name="_856" size="2048" source="CrossTab:Header:y:-856:Concat:" type="V_WString" />
+            <Field name="_853" size="2048" source="CrossTab:Header:y:-853:Concat:" type="V_WString" />
+            <Field name="_852" size="2048" source="CrossTab:Header:y:-852:Concat:" type="V_WString" />
+            <Field name="_851" size="2048" source="CrossTab:Header:y:-851:Concat:" type="V_WString" />
+            <Field name="_850" size="2048" source="CrossTab:Header:y:-850:Concat:" type="V_WString" />
+            <Field name="_849" size="2048" source="CrossTab:Header:y:-849:Concat:" type="V_WString" />
+            <Field name="_847" size="2048" source="CrossTab:Header:y:-847:Concat:" type="V_WString" />
+            <Field name="_846" size="2048" source="CrossTab:Header:y:-846:Concat:" type="V_WString" />
+            <Field name="_845" size="2048" source="CrossTab:Header:y:-845:Concat:" type="V_WString" />
+            <Field name="_844" size="2048" source="CrossTab:Header:y:-844:Concat:" type="V_WString" />
+            <Field name="_843" size="2048" source="CrossTab:Header:y:-843:Concat:" type="V_WString" />
+            <Field name="_842" size="2048" source="CrossTab:Header:y:-842:Concat:" type="V_WString" />
+            <Field name="_840" size="2048" source="CrossTab:Header:y:-840:Concat:" type="V_WString" />
+            <Field name="_839" size="2048" source="CrossTab:Header:y:-839:Concat:" type="V_WString" />
+            <Field name="_838" size="2048" source="CrossTab:Header:y:-838:Concat:" type="V_WString" />
+            <Field name="_837" size="2048" source="CrossTab:Header:y:-837:Concat:" type="V_WString" />
+            <Field name="_836" size="2048" source="CrossTab:Header:y:-836:Concat:" type="V_WString" />
+            <Field name="_835" size="2048" source="CrossTab:Header:y:-835:Concat:" type="V_WString" />
+            <Field name="_833" size="2048" source="CrossTab:Header:y:-833:Concat:" type="V_WString" />
+            <Field name="_832" size="2048" source="CrossTab:Header:y:-832:Concat:" type="V_WString" />
+            <Field name="_831" size="2048" source="CrossTab:Header:y:-831:Concat:" type="V_WString" />
+            <Field name="_830" size="2048" source="CrossTab:Header:y:-830:Concat:" type="V_WString" />
+            <Field name="_829" size="2048" source="CrossTab:Header:y:-829:Concat:" type="V_WString" />
+            <Field name="_828" size="2048" source="CrossTab:Header:y:-828:Concat:" type="V_WString" />
+            <Field name="_826" size="2048" source="CrossTab:Header:y:-826:Concat:" type="V_WString" />
+            <Field name="_825" size="2048" source="CrossTab:Header:y:-825:Concat:" type="V_WString" />
+            <Field name="_824" size="2048" source="CrossTab:Header:y:-824:Concat:" type="V_WString" />
+            <Field name="_823" size="2048" source="CrossTab:Header:y:-823:Concat:" type="V_WString" />
+            <Field name="_822" size="2048" source="CrossTab:Header:y:-822:Concat:" type="V_WString" />
+            <Field name="_821" size="2048" source="CrossTab:Header:y:-821:Concat:" type="V_WString" />
+            <Field name="_819" size="2048" source="CrossTab:Header:y:-819:Concat:" type="V_WString" />
+            <Field name="_818" size="2048" source="CrossTab:Header:y:-818:Concat:" type="V_WString" />
+            <Field name="_817" size="2048" source="CrossTab:Header:y:-817:Concat:" type="V_WString" />
+            <Field name="_816" size="2048" source="CrossTab:Header:y:-816:Concat:" type="V_WString" />
+            <Field name="_815" size="2048" source="CrossTab:Header:y:-815:Concat:" type="V_WString" />
+            <Field name="_814" size="2048" source="CrossTab:Header:y:-814:Concat:" type="V_WString" />
+            <Field name="_812" size="2048" source="CrossTab:Header:y:-812:Concat:" type="V_WString" />
+            <Field name="_811" size="2048" source="CrossTab:Header:y:-811:Concat:" type="V_WString" />
+            <Field name="_810" size="2048" source="CrossTab:Header:y:-810:Concat:" type="V_WString" />
+            <Field name="_809" size="2048" source="CrossTab:Header:y:-809:Concat:" type="V_WString" />
+            <Field name="_808" size="2048" source="CrossTab:Header:y:-808:Concat:" type="V_WString" />
+            <Field name="_807" size="2048" source="CrossTab:Header:y:-807:Concat:" type="V_WString" />
+            <Field name="_805" size="2048" source="CrossTab:Header:y:-805:Concat:" type="V_WString" />
+            <Field name="_804" size="2048" source="CrossTab:Header:y:-804:Concat:" type="V_WString" />
+            <Field name="_803" size="2048" source="CrossTab:Header:y:-803:Concat:" type="V_WString" />
+            <Field name="_802" size="2048" source="CrossTab:Header:y:-802:Concat:" type="V_WString" />
+            <Field name="_801" size="2048" source="CrossTab:Header:y:-801:Concat:" type="V_WString" />
+            <Field name="_800" size="2048" source="CrossTab:Header:y:-800:Concat:" type="V_WString" />
+            <Field name="_798" size="2048" source="CrossTab:Header:y:-798:Concat:" type="V_WString" />
+            <Field name="_797" size="2048" source="CrossTab:Header:y:-797:Concat:" type="V_WString" />
+            <Field name="_796" size="2048" source="CrossTab:Header:y:-796:Concat:" type="V_WString" />
+            <Field name="_795" size="2048" source="CrossTab:Header:y:-795:Concat:" type="V_WString" />
+            <Field name="_793" size="2048" source="CrossTab:Header:y:-793:Concat:" type="V_WString" />
+            <Field name="_790" size="2048" source="CrossTab:Header:y:-790:Concat:" type="V_WString" />
+            <Field name="_789" size="2048" source="CrossTab:Header:y:-789:Concat:" type="V_WString" />
+            <Field name="_788" size="2048" source="CrossTab:Header:y:-788:Concat:" type="V_WString" />
+            <Field name="_787" size="2048" source="CrossTab:Header:y:-787:Concat:" type="V_WString" />
+            <Field name="_786" size="2048" source="CrossTab:Header:y:-786:Concat:" type="V_WString" />
+            <Field name="_784" size="2048" source="CrossTab:Header:y:-784:Concat:" type="V_WString" />
+            <Field name="_783" size="2048" source="CrossTab:Header:y:-783:Concat:" type="V_WString" />
+            <Field name="_782" size="2048" source="CrossTab:Header:y:-782:Concat:" type="V_WString" />
+            <Field name="_781" size="2048" source="CrossTab:Header:y:-781:Concat:" type="V_WString" />
+            <Field name="_780" size="2048" source="CrossTab:Header:y:-780:Concat:" type="V_WString" />
+            <Field name="_779" size="2048" source="CrossTab:Header:y:-779:Concat:" type="V_WString" />
+            <Field name="_777" size="2048" source="CrossTab:Header:y:-777:Concat:" type="V_WString" />
+            <Field name="_776" size="2048" source="CrossTab:Header:y:-776:Concat:" type="V_WString" />
+            <Field name="_775" size="2048" source="CrossTab:Header:y:-775:Concat:" type="V_WString" />
+            <Field name="_774" size="2048" source="CrossTab:Header:y:-774:Concat:" type="V_WString" />
+            <Field name="_773" size="2048" source="CrossTab:Header:y:-773:Concat:" type="V_WString" />
+            <Field name="_772" size="2048" source="CrossTab:Header:y:-772:Concat:" type="V_WString" />
+            <Field name="_770" size="2048" source="CrossTab:Header:y:-770:Concat:" type="V_WString" />
+            <Field name="_769" size="2048" source="CrossTab:Header:y:-769:Concat:" type="V_WString" />
+            <Field name="_767" size="2048" source="CrossTab:Header:y:-767:Concat:" type="V_WString" />
+            <Field name="_765" size="2048" source="CrossTab:Header:y:-765:Concat:" type="V_WString" />
+            <Field name="_763" size="2048" source="CrossTab:Header:y:-763:Concat:" type="V_WString" />
+            <Field name="_762" size="2048" source="CrossTab:Header:y:-762:Concat:" type="V_WString" />
+            <Field name="_761" size="2048" source="CrossTab:Header:y:-761:Concat:" type="V_WString" />
+            <Field name="_760" size="2048" source="CrossTab:Header:y:-760:Concat:" type="V_WString" />
+            <Field name="_759" size="2048" source="CrossTab:Header:y:-759:Concat:" type="V_WString" />
+            <Field name="_758" size="2048" source="CrossTab:Header:y:-758:Concat:" type="V_WString" />
+            <Field name="_756" size="2048" source="CrossTab:Header:y:-756:Concat:" type="V_WString" />
+            <Field name="_755" size="2048" source="CrossTab:Header:y:-755:Concat:" type="V_WString" />
+            <Field name="_754" size="2048" source="CrossTab:Header:y:-754:Concat:" type="V_WString" />
+            <Field name="_753" size="2048" source="CrossTab:Header:y:-753:Concat:" type="V_WString" />
+            <Field name="_752" size="2048" source="CrossTab:Header:y:-752:Concat:" type="V_WString" />
+            <Field name="_751" size="2048" source="CrossTab:Header:y:-751:Concat:" type="V_WString" />
+            <Field name="_749" size="2048" source="CrossTab:Header:y:-749:Concat:" type="V_WString" />
+            <Field name="_748" size="2048" source="CrossTab:Header:y:-748:Concat:" type="V_WString" />
+            <Field name="_747" size="2048" source="CrossTab:Header:y:-747:Concat:" type="V_WString" />
+            <Field name="_746" size="2048" source="CrossTab:Header:y:-746:Concat:" type="V_WString" />
+            <Field name="_745" size="2048" source="CrossTab:Header:y:-745:Concat:" type="V_WString" />
+            <Field name="_744" size="2048" source="CrossTab:Header:y:-744:Concat:" type="V_WString" />
+            <Field name="_742" size="2048" source="CrossTab:Header:y:-742:Concat:" type="V_WString" />
+            <Field name="_741" size="2048" source="CrossTab:Header:y:-741:Concat:" type="V_WString" />
+            <Field name="_740" size="2048" source="CrossTab:Header:y:-740:Concat:" type="V_WString" />
+            <Field name="_739" size="2048" source="CrossTab:Header:y:-739:Concat:" type="V_WString" />
+            <Field name="_738" size="2048" source="CrossTab:Header:y:-738:Concat:" type="V_WString" />
+            <Field name="_737" size="2048" source="CrossTab:Header:y:-737:Concat:" type="V_WString" />
+            <Field name="_735" size="2048" source="CrossTab:Header:y:-735:Concat:" type="V_WString" />
+            <Field name="_734" size="2048" source="CrossTab:Header:y:-734:Concat:" type="V_WString" />
+            <Field name="_733" size="2048" source="CrossTab:Header:y:-733:Concat:" type="V_WString" />
+            <Field name="_732" size="2048" source="CrossTab:Header:y:-732:Concat:" type="V_WString" />
+            <Field name="_731" size="2048" source="CrossTab:Header:y:-731:Concat:" type="V_WString" />
+            <Field name="_730" size="2048" source="CrossTab:Header:y:-730:Concat:" type="V_WString" />
+            <Field name="_727" size="2048" source="CrossTab:Header:y:-727:Concat:" type="V_WString" />
+            <Field name="_726" size="2048" source="CrossTab:Header:y:-726:Concat:" type="V_WString" />
+            <Field name="_724" size="2048" source="CrossTab:Header:y:-724:Concat:" type="V_WString" />
+            <Field name="_723" size="2048" source="CrossTab:Header:y:-723:Concat:" type="V_WString" />
+            <Field name="_721" size="2048" source="CrossTab:Header:y:-721:Concat:" type="V_WString" />
+            <Field name="_720" size="2048" source="CrossTab:Header:y:-720:Concat:" type="V_WString" />
+            <Field name="_719" size="2048" source="CrossTab:Header:y:-719:Concat:" type="V_WString" />
+            <Field name="_718" size="2048" source="CrossTab:Header:y:-718:Concat:" type="V_WString" />
+            <Field name="_716" size="2048" source="CrossTab:Header:y:-716:Concat:" type="V_WString" />
+            <Field name="_714" size="2048" source="CrossTab:Header:y:-714:Concat:" type="V_WString" />
+            <Field name="_713" size="2048" source="CrossTab:Header:y:-713:Concat:" type="V_WString" />
+            <Field name="_712" size="2048" source="CrossTab:Header:y:-712:Concat:" type="V_WString" />
+            <Field name="_711" size="2048" source="CrossTab:Header:y:-711:Concat:" type="V_WString" />
+            <Field name="_710" size="2048" source="CrossTab:Header:y:-710:Concat:" type="V_WString" />
+            <Field name="_709" size="2048" source="CrossTab:Header:y:-709:Concat:" type="V_WString" />
+            <Field name="_707" size="2048" source="CrossTab:Header:y:-707:Concat:" type="V_WString" />
+            <Field name="_706" size="2048" source="CrossTab:Header:y:-706:Concat:" type="V_WString" />
+            <Field name="_705" size="2048" source="CrossTab:Header:y:-705:Concat:" type="V_WString" />
+            <Field name="_704" size="2048" source="CrossTab:Header:y:-704:Concat:" type="V_WString" />
+            <Field name="_703" size="2048" source="CrossTab:Header:y:-703:Concat:" type="V_WString" />
+            <Field name="_702" size="2048" source="CrossTab:Header:y:-702:Concat:" type="V_WString" />
+            <Field name="_700" size="2048" source="CrossTab:Header:y:-700:Concat:" type="V_WString" />
+            <Field name="_699" size="2048" source="CrossTab:Header:y:-699:Concat:" type="V_WString" />
+            <Field name="_698" size="2048" source="CrossTab:Header:y:-698:Concat:" type="V_WString" />
+            <Field name="_697" size="2048" source="CrossTab:Header:y:-697:Concat:" type="V_WString" />
+            <Field name="_696" size="2048" source="CrossTab:Header:y:-696:Concat:" type="V_WString" />
+            <Field name="_695" size="2048" source="CrossTab:Header:y:-695:Concat:" type="V_WString" />
+            <Field name="_693" size="2048" source="CrossTab:Header:y:-693:Concat:" type="V_WString" />
+            <Field name="_692" size="2048" source="CrossTab:Header:y:-692:Concat:" type="V_WString" />
+            <Field name="_691" size="2048" source="CrossTab:Header:y:-691:Concat:" type="V_WString" />
+            <Field name="_690" size="2048" source="CrossTab:Header:y:-690:Concat:" type="V_WString" />
+            <Field name="_689" size="2048" source="CrossTab:Header:y:-689:Concat:" type="V_WString" />
+            <Field name="_688" size="2048" source="CrossTab:Header:y:-688:Concat:" type="V_WString" />
+            <Field name="_686" size="2048" source="CrossTab:Header:y:-686:Concat:" type="V_WString" />
+            <Field name="_685" size="2048" source="CrossTab:Header:y:-685:Concat:" type="V_WString" />
+            <Field name="_683" size="2048" source="CrossTab:Header:y:-683:Concat:" type="V_WString" />
+            <Field name="_682" size="2048" source="CrossTab:Header:y:-682:Concat:" type="V_WString" />
+            <Field name="_681" size="2048" source="CrossTab:Header:y:-681:Concat:" type="V_WString" />
+            <Field name="_679" size="2048" source="CrossTab:Header:y:-679:Concat:" type="V_WString" />
+            <Field name="_678" size="2048" source="CrossTab:Header:y:-678:Concat:" type="V_WString" />
+            <Field name="_677" size="2048" source="CrossTab:Header:y:-677:Concat:" type="V_WString" />
+            <Field name="_676" size="2048" source="CrossTab:Header:y:-676:Concat:" type="V_WString" />
+            <Field name="_675" size="2048" source="CrossTab:Header:y:-675:Concat:" type="V_WString" />
+            <Field name="_674" size="2048" source="CrossTab:Header:y:-674:Concat:" type="V_WString" />
+            <Field name="_672" size="2048" source="CrossTab:Header:y:-672:Concat:" type="V_WString" />
+            <Field name="_671" size="2048" source="CrossTab:Header:y:-671:Concat:" type="V_WString" />
+            <Field name="_670" size="2048" source="CrossTab:Header:y:-670:Concat:" type="V_WString" />
+            <Field name="_669" size="2048" source="CrossTab:Header:y:-669:Concat:" type="V_WString" />
+            <Field name="_668" size="2048" source="CrossTab:Header:y:-668:Concat:" type="V_WString" />
+            <Field name="_667" size="2048" source="CrossTab:Header:y:-667:Concat:" type="V_WString" />
+            <Field name="_665" size="2048" source="CrossTab:Header:y:-665:Concat:" type="V_WString" />
+            <Field name="_664" size="2048" source="CrossTab:Header:y:-664:Concat:" type="V_WString" />
+            <Field name="_663" size="2048" source="CrossTab:Header:y:-663:Concat:" type="V_WString" />
+            <Field name="_662" size="2048" source="CrossTab:Header:y:-662:Concat:" type="V_WString" />
+            <Field name="_661" size="2048" source="CrossTab:Header:y:-661:Concat:" type="V_WString" />
+            <Field name="_660" size="2048" source="CrossTab:Header:y:-660:Concat:" type="V_WString" />
+            <Field name="_658" size="2048" source="CrossTab:Header:y:-658:Concat:" type="V_WString" />
+            <Field name="_657" size="2048" source="CrossTab:Header:y:-657:Concat:" type="V_WString" />
+            <Field name="_655" size="2048" source="CrossTab:Header:y:-655:Concat:" type="V_WString" />
+            <Field name="_654" size="2048" source="CrossTab:Header:y:-654:Concat:" type="V_WString" />
+            <Field name="_653" size="2048" source="CrossTab:Header:y:-653:Concat:" type="V_WString" />
+            <Field name="_651" size="2048" source="CrossTab:Header:y:-651:Concat:" type="V_WString" />
+            <Field name="_650" size="2048" source="CrossTab:Header:y:-650:Concat:" type="V_WString" />
+            <Field name="_649" size="2048" source="CrossTab:Header:y:-649:Concat:" type="V_WString" />
+            <Field name="_648" size="2048" source="CrossTab:Header:y:-648:Concat:" type="V_WString" />
+            <Field name="_647" size="2048" source="CrossTab:Header:y:-647:Concat:" type="V_WString" />
+            <Field name="_646" size="2048" source="CrossTab:Header:y:-646:Concat:" type="V_WString" />
+            <Field name="_644" size="2048" source="CrossTab:Header:y:-644:Concat:" type="V_WString" />
+            <Field name="_643" size="2048" source="CrossTab:Header:y:-643:Concat:" type="V_WString" />
+            <Field name="_642" size="2048" source="CrossTab:Header:y:-642:Concat:" type="V_WString" />
+            <Field name="_641" size="2048" source="CrossTab:Header:y:-641:Concat:" type="V_WString" />
+            <Field name="_640" size="2048" source="CrossTab:Header:y:-640:Concat:" type="V_WString" />
+            <Field name="_639" size="2048" source="CrossTab:Header:y:-639:Concat:" type="V_WString" />
+            <Field name="_637" size="2048" source="CrossTab:Header:y:-637:Concat:" type="V_WString" />
+            <Field name="_636" size="2048" source="CrossTab:Header:y:-636:Concat:" type="V_WString" />
+            <Field name="_635" size="2048" source="CrossTab:Header:y:-635:Concat:" type="V_WString" />
+            <Field name="_634" size="2048" source="CrossTab:Header:y:-634:Concat:" type="V_WString" />
+            <Field name="_633" size="2048" source="CrossTab:Header:y:-633:Concat:" type="V_WString" />
+            <Field name="_632" size="2048" source="CrossTab:Header:y:-632:Concat:" type="V_WString" />
+            <Field name="_630" size="2048" source="CrossTab:Header:y:-630:Concat:" type="V_WString" />
+            <Field name="_629" size="2048" source="CrossTab:Header:y:-629:Concat:" type="V_WString" />
+            <Field name="_628" size="2048" source="CrossTab:Header:y:-628:Concat:" type="V_WString" />
+            <Field name="_627" size="2048" source="CrossTab:Header:y:-627:Concat:" type="V_WString" />
+            <Field name="_626" size="2048" source="CrossTab:Header:y:-626:Concat:" type="V_WString" />
+            <Field name="_625" size="2048" source="CrossTab:Header:y:-625:Concat:" type="V_WString" />
+            <Field name="_623" size="2048" source="CrossTab:Header:y:-623:Concat:" type="V_WString" />
+            <Field name="_622" size="2048" source="CrossTab:Header:y:-622:Concat:" type="V_WString" />
+            <Field name="_621" size="2048" source="CrossTab:Header:y:-621:Concat:" type="V_WString" />
+            <Field name="_620" size="2048" source="CrossTab:Header:y:-620:Concat:" type="V_WString" />
+            <Field name="_619" size="2048" source="CrossTab:Header:y:-619:Concat:" type="V_WString" />
+            <Field name="_618" size="2048" source="CrossTab:Header:y:-618:Concat:" type="V_WString" />
+            <Field name="_616" size="2048" source="CrossTab:Header:y:-616:Concat:" type="V_WString" />
+            <Field name="_615" size="2048" source="CrossTab:Header:y:-615:Concat:" type="V_WString" />
+            <Field name="_614" size="2048" source="CrossTab:Header:y:-614:Concat:" type="V_WString" />
+            <Field name="_613" size="2048" source="CrossTab:Header:y:-613:Concat:" type="V_WString" />
+            <Field name="_612" size="2048" source="CrossTab:Header:y:-612:Concat:" type="V_WString" />
+            <Field name="_611" size="2048" source="CrossTab:Header:y:-611:Concat:" type="V_WString" />
+            <Field name="_609" size="2048" source="CrossTab:Header:y:-609:Concat:" type="V_WString" />
+            <Field name="_608" size="2048" source="CrossTab:Header:y:-608:Concat:" type="V_WString" />
+            <Field name="_607" size="2048" source="CrossTab:Header:y:-607:Concat:" type="V_WString" />
+            <Field name="_606" size="2048" source="CrossTab:Header:y:-606:Concat:" type="V_WString" />
+            <Field name="_605" size="2048" source="CrossTab:Header:y:-605:Concat:" type="V_WString" />
+            <Field name="_604" size="2048" source="CrossTab:Header:y:-604:Concat:" type="V_WString" />
+            <Field name="_602" size="2048" source="CrossTab:Header:y:-602:Concat:" type="V_WString" />
+            <Field name="_601" size="2048" source="CrossTab:Header:y:-601:Concat:" type="V_WString" />
+            <Field name="_600" size="2048" source="CrossTab:Header:y:-600:Concat:" type="V_WString" />
+            <Field name="_599" size="2048" source="CrossTab:Header:y:-599:Concat:" type="V_WString" />
+            <Field name="_598" size="2048" source="CrossTab:Header:y:-598:Concat:" type="V_WString" />
+            <Field name="_597" size="2048" source="CrossTab:Header:y:-597:Concat:" type="V_WString" />
+            <Field name="_595" size="2048" source="CrossTab:Header:y:-595:Concat:" type="V_WString" />
+            <Field name="_594" size="2048" source="CrossTab:Header:y:-594:Concat:" type="V_WString" />
+            <Field name="_593" size="2048" source="CrossTab:Header:y:-593:Concat:" type="V_WString" />
+            <Field name="_592" size="2048" source="CrossTab:Header:y:-592:Concat:" type="V_WString" />
+            <Field name="_591" size="2048" source="CrossTab:Header:y:-591:Concat:" type="V_WString" />
+            <Field name="_590" size="2048" source="CrossTab:Header:y:-590:Concat:" type="V_WString" />
+            <Field name="_588" size="2048" source="CrossTab:Header:y:-588:Concat:" type="V_WString" />
+            <Field name="_587" size="2048" source="CrossTab:Header:y:-587:Concat:" type="V_WString" />
+            <Field name="_586" size="2048" source="CrossTab:Header:y:-586:Concat:" type="V_WString" />
+            <Field name="_585" size="2048" source="CrossTab:Header:y:-585:Concat:" type="V_WString" />
+            <Field name="_584" size="2048" source="CrossTab:Header:y:-584:Concat:" type="V_WString" />
+            <Field name="_583" size="2048" source="CrossTab:Header:y:-583:Concat:" type="V_WString" />
+            <Field name="_581" size="2048" source="CrossTab:Header:y:-581:Concat:" type="V_WString" />
+            <Field name="_580" size="2048" source="CrossTab:Header:y:-580:Concat:" type="V_WString" />
+            <Field name="_579" size="2048" source="CrossTab:Header:y:-579:Concat:" type="V_WString" />
+            <Field name="_578" size="2048" source="CrossTab:Header:y:-578:Concat:" type="V_WString" />
+            <Field name="_577" size="2048" source="CrossTab:Header:y:-577:Concat:" type="V_WString" />
+            <Field name="_576" size="2048" source="CrossTab:Header:y:-576:Concat:" type="V_WString" />
+            <Field name="_574" size="2048" source="CrossTab:Header:y:-574:Concat:" type="V_WString" />
+            <Field name="_573" size="2048" source="CrossTab:Header:y:-573:Concat:" type="V_WString" />
+            <Field name="_572" size="2048" source="CrossTab:Header:y:-572:Concat:" type="V_WString" />
+            <Field name="_571" size="2048" source="CrossTab:Header:y:-571:Concat:" type="V_WString" />
+            <Field name="_570" size="2048" source="CrossTab:Header:y:-570:Concat:" type="V_WString" />
+            <Field name="_569" size="2048" source="CrossTab:Header:y:-569:Concat:" type="V_WString" />
+            <Field name="_567" size="2048" source="CrossTab:Header:y:-567:Concat:" type="V_WString" />
+            <Field name="_566" size="2048" source="CrossTab:Header:y:-566:Concat:" type="V_WString" />
+            <Field name="_565" size="2048" source="CrossTab:Header:y:-565:Concat:" type="V_WString" />
+            <Field name="_564" size="2048" source="CrossTab:Header:y:-564:Concat:" type="V_WString" />
+            <Field name="_563" size="2048" source="CrossTab:Header:y:-563:Concat:" type="V_WString" />
+            <Field name="_562" size="2048" source="CrossTab:Header:y:-562:Concat:" type="V_WString" />
+            <Field name="_560" size="2048" source="CrossTab:Header:y:-560:Concat:" type="V_WString" />
+            <Field name="_559" size="2048" source="CrossTab:Header:y:-559:Concat:" type="V_WString" />
+            <Field name="_558" size="2048" source="CrossTab:Header:y:-558:Concat:" type="V_WString" />
+            <Field name="_557" size="2048" source="CrossTab:Header:y:-557:Concat:" type="V_WString" />
+            <Field name="_556" size="2048" source="CrossTab:Header:y:-556:Concat:" type="V_WString" />
+            <Field name="_555" size="2048" source="CrossTab:Header:y:-555:Concat:" type="V_WString" />
+            <Field name="_553" size="2048" source="CrossTab:Header:y:-553:Concat:" type="V_WString" />
+            <Field name="_552" size="2048" source="CrossTab:Header:y:-552:Concat:" type="V_WString" />
+            <Field name="_551" size="2048" source="CrossTab:Header:y:-551:Concat:" type="V_WString" />
+            <Field name="_550" size="2048" source="CrossTab:Header:y:-550:Concat:" type="V_WString" />
+            <Field name="_549" size="2048" source="CrossTab:Header:y:-549:Concat:" type="V_WString" />
+            <Field name="_546" size="2048" source="CrossTab:Header:y:-546:Concat:" type="V_WString" />
+            <Field name="_545" size="2048" source="CrossTab:Header:y:-545:Concat:" type="V_WString" />
+            <Field name="_544" size="2048" source="CrossTab:Header:y:-544:Concat:" type="V_WString" />
+            <Field name="_543" size="2048" source="CrossTab:Header:y:-543:Concat:" type="V_WString" />
+            <Field name="_542" size="2048" source="CrossTab:Header:y:-542:Concat:" type="V_WString" />
+            <Field name="_541" size="2048" source="CrossTab:Header:y:-541:Concat:" type="V_WString" />
+            <Field name="_539" size="2048" source="CrossTab:Header:y:-539:Concat:" type="V_WString" />
+            <Field name="_538" size="2048" source="CrossTab:Header:y:-538:Concat:" type="V_WString" />
+            <Field name="_537" size="2048" source="CrossTab:Header:y:-537:Concat:" type="V_WString" />
+            <Field name="_536" size="2048" source="CrossTab:Header:y:-536:Concat:" type="V_WString" />
+            <Field name="_535" size="2048" source="CrossTab:Header:y:-535:Concat:" type="V_WString" />
+            <Field name="_534" size="2048" source="CrossTab:Header:y:-534:Concat:" type="V_WString" />
+            <Field name="_532" size="2048" source="CrossTab:Header:y:-532:Concat:" type="V_WString" />
+            <Field name="_531" size="2048" source="CrossTab:Header:y:-531:Concat:" type="V_WString" />
+            <Field name="_530" size="2048" source="CrossTab:Header:y:-530:Concat:" type="V_WString" />
+            <Field name="_529" size="2048" source="CrossTab:Header:y:-529:Concat:" type="V_WString" />
+            <Field name="_528" size="2048" source="CrossTab:Header:y:-528:Concat:" type="V_WString" />
+            <Field name="_527" size="2048" source="CrossTab:Header:y:-527:Concat:" type="V_WString" />
+            <Field name="_525" size="2048" source="CrossTab:Header:y:-525:Concat:" type="V_WString" />
+            <Field name="_524" size="2048" source="CrossTab:Header:y:-524:Concat:" type="V_WString" />
+            <Field name="_523" size="2048" source="CrossTab:Header:y:-523:Concat:" type="V_WString" />
+            <Field name="_522" size="2048" source="CrossTab:Header:y:-522:Concat:" type="V_WString" />
+            <Field name="_521" size="2048" source="CrossTab:Header:y:-521:Concat:" type="V_WString" />
+            <Field name="_520" size="2048" source="CrossTab:Header:y:-520:Concat:" type="V_WString" />
+            <Field name="_518" size="2048" source="CrossTab:Header:y:-518:Concat:" type="V_WString" />
+            <Field name="_517" size="2048" source="CrossTab:Header:y:-517:Concat:" type="V_WString" />
+            <Field name="_516" size="2048" source="CrossTab:Header:y:-516:Concat:" type="V_WString" />
+            <Field name="_515" size="2048" source="CrossTab:Header:y:-515:Concat:" type="V_WString" />
+            <Field name="_514" size="2048" source="CrossTab:Header:y:-514:Concat:" type="V_WString" />
+            <Field name="_513" size="2048" source="CrossTab:Header:y:-513:Concat:" type="V_WString" />
+            <Field name="_511" size="2048" source="CrossTab:Header:y:-511:Concat:" type="V_WString" />
+            <Field name="_510" size="2048" source="CrossTab:Header:y:-510:Concat:" type="V_WString" />
+            <Field name="_509" size="2048" source="CrossTab:Header:y:-509:Concat:" type="V_WString" />
+            <Field name="_508" size="2048" source="CrossTab:Header:y:-508:Concat:" type="V_WString" />
+            <Field name="_507" size="2048" source="CrossTab:Header:y:-507:Concat:" type="V_WString" />
+            <Field name="_506" size="2048" source="CrossTab:Header:y:-506:Concat:" type="V_WString" />
+            <Field name="_504" size="2048" source="CrossTab:Header:y:-504:Concat:" type="V_WString" />
+            <Field name="_503" size="2048" source="CrossTab:Header:y:-503:Concat:" type="V_WString" />
+            <Field name="_502" size="2048" source="CrossTab:Header:y:-502:Concat:" type="V_WString" />
+            <Field name="_501" size="2048" source="CrossTab:Header:y:-501:Concat:" type="V_WString" />
+            <Field name="_500" size="2048" source="CrossTab:Header:y:-500:Concat:" type="V_WString" />
+            <Field name="_499" size="2048" source="CrossTab:Header:y:-499:Concat:" type="V_WString" />
+            <Field name="_497" size="2048" source="CrossTab:Header:y:-497:Concat:" type="V_WString" />
+            <Field name="_496" size="2048" source="CrossTab:Header:y:-496:Concat:" type="V_WString" />
+            <Field name="_495" size="2048" source="CrossTab:Header:y:-495:Concat:" type="V_WString" />
+            <Field name="_494" size="2048" source="CrossTab:Header:y:-494:Concat:" type="V_WString" />
+            <Field name="_493" size="2048" source="CrossTab:Header:y:-493:Concat:" type="V_WString" />
+            <Field name="_492" size="2048" source="CrossTab:Header:y:-492:Concat:" type="V_WString" />
+            <Field name="_490" size="2048" source="CrossTab:Header:y:-490:Concat:" type="V_WString" />
+            <Field name="_489" size="2048" source="CrossTab:Header:y:-489:Concat:" type="V_WString" />
+            <Field name="_488" size="2048" source="CrossTab:Header:y:-488:Concat:" type="V_WString" />
+            <Field name="_487" size="2048" source="CrossTab:Header:y:-487:Concat:" type="V_WString" />
+            <Field name="_486" size="2048" source="CrossTab:Header:y:-486:Concat:" type="V_WString" />
+            <Field name="_485" size="2048" source="CrossTab:Header:y:-485:Concat:" type="V_WString" />
+            <Field name="_483" size="2048" source="CrossTab:Header:y:-483:Concat:" type="V_WString" />
+            <Field name="_482" size="2048" source="CrossTab:Header:y:-482:Concat:" type="V_WString" />
+            <Field name="_481" size="2048" source="CrossTab:Header:y:-481:Concat:" type="V_WString" />
+            <Field name="_480" size="2048" source="CrossTab:Header:y:-480:Concat:" type="V_WString" />
+            <Field name="_479" size="2048" source="CrossTab:Header:y:-479:Concat:" type="V_WString" />
+            <Field name="_478" size="2048" source="CrossTab:Header:y:-478:Concat:" type="V_WString" />
+            <Field name="_476" size="2048" source="CrossTab:Header:y:-476:Concat:" type="V_WString" />
+            <Field name="_475" size="2048" source="CrossTab:Header:y:-475:Concat:" type="V_WString" />
+            <Field name="_474" size="2048" source="CrossTab:Header:y:-474:Concat:" type="V_WString" />
+            <Field name="_473" size="2048" source="CrossTab:Header:y:-473:Concat:" type="V_WString" />
+            <Field name="_472" size="2048" source="CrossTab:Header:y:-472:Concat:" type="V_WString" />
+            <Field name="_471" size="2048" source="CrossTab:Header:y:-471:Concat:" type="V_WString" />
+            <Field name="_469" size="2048" source="CrossTab:Header:y:-469:Concat:" type="V_WString" />
+            <Field name="_468" size="2048" source="CrossTab:Header:y:-468:Concat:" type="V_WString" />
+            <Field name="_467" size="2048" source="CrossTab:Header:y:-467:Concat:" type="V_WString" />
+            <Field name="_466" size="2048" source="CrossTab:Header:y:-466:Concat:" type="V_WString" />
+            <Field name="_465" size="2048" source="CrossTab:Header:y:-465:Concat:" type="V_WString" />
+            <Field name="_464" size="2048" source="CrossTab:Header:y:-464:Concat:" type="V_WString" />
+            <Field name="_462" size="2048" source="CrossTab:Header:y:-462:Concat:" type="V_WString" />
+            <Field name="_461" size="2048" source="CrossTab:Header:y:-461:Concat:" type="V_WString" />
+            <Field name="_460" size="2048" source="CrossTab:Header:y:-460:Concat:" type="V_WString" />
+            <Field name="_459" size="2048" source="CrossTab:Header:y:-459:Concat:" type="V_WString" />
+            <Field name="_458" size="2048" source="CrossTab:Header:y:-458:Concat:" type="V_WString" />
+            <Field name="_457" size="2048" source="CrossTab:Header:y:-457:Concat:" type="V_WString" />
+            <Field name="_455" size="2048" source="CrossTab:Header:y:-455:Concat:" type="V_WString" />
+            <Field name="_454" size="2048" source="CrossTab:Header:y:-454:Concat:" type="V_WString" />
+            <Field name="_453" size="2048" source="CrossTab:Header:y:-453:Concat:" type="V_WString" />
+            <Field name="_452" size="2048" source="CrossTab:Header:y:-452:Concat:" type="V_WString" />
+            <Field name="_450" size="2048" source="CrossTab:Header:y:-450:Concat:" type="V_WString" />
+            <Field name="_448" size="2048" source="CrossTab:Header:y:-448:Concat:" type="V_WString" />
+            <Field name="_447" size="2048" source="CrossTab:Header:y:-447:Concat:" type="V_WString" />
+            <Field name="_446" size="2048" source="CrossTab:Header:y:-446:Concat:" type="V_WString" />
+            <Field name="_445" size="2048" source="CrossTab:Header:y:-445:Concat:" type="V_WString" />
+            <Field name="_444" size="2048" source="CrossTab:Header:y:-444:Concat:" type="V_WString" />
+            <Field name="_443" size="2048" source="CrossTab:Header:y:-443:Concat:" type="V_WString" />
+            <Field name="_441" size="2048" source="CrossTab:Header:y:-441:Concat:" type="V_WString" />
+            <Field name="_440" size="2048" source="CrossTab:Header:y:-440:Concat:" type="V_WString" />
+            <Field name="_439" size="2048" source="CrossTab:Header:y:-439:Concat:" type="V_WString" />
+            <Field name="_438" size="2048" source="CrossTab:Header:y:-438:Concat:" type="V_WString" />
+            <Field name="_437" size="2048" source="CrossTab:Header:y:-437:Concat:" type="V_WString" />
+            <Field name="_436" size="2048" source="CrossTab:Header:y:-436:Concat:" type="V_WString" />
+            <Field name="_434" size="2048" source="CrossTab:Header:y:-434:Concat:" type="V_WString" />
+            <Field name="_433" size="2048" source="CrossTab:Header:y:-433:Concat:" type="V_WString" />
+            <Field name="_432" size="2048" source="CrossTab:Header:y:-432:Concat:" type="V_WString" />
+            <Field name="_431" size="2048" source="CrossTab:Header:y:-431:Concat:" type="V_WString" />
+            <Field name="_430" size="2048" source="CrossTab:Header:y:-430:Concat:" type="V_WString" />
+            <Field name="_429" size="2048" source="CrossTab:Header:y:-429:Concat:" type="V_WString" />
+            <Field name="_427" size="2048" source="CrossTab:Header:y:-427:Concat:" type="V_WString" />
+            <Field name="_426" size="2048" source="CrossTab:Header:y:-426:Concat:" type="V_WString" />
+            <Field name="_425" size="2048" source="CrossTab:Header:y:-425:Concat:" type="V_WString" />
+            <Field name="_424" size="2048" source="CrossTab:Header:y:-424:Concat:" type="V_WString" />
+            <Field name="_423" size="2048" source="CrossTab:Header:y:-423:Concat:" type="V_WString" />
+            <Field name="_422" size="2048" source="CrossTab:Header:y:-422:Concat:" type="V_WString" />
+            <Field name="_420" size="2048" source="CrossTab:Header:y:-420:Concat:" type="V_WString" />
+            <Field name="_419" size="2048" source="CrossTab:Header:y:-419:Concat:" type="V_WString" />
+            <Field name="_418" size="2048" source="CrossTab:Header:y:-418:Concat:" type="V_WString" />
+            <Field name="_417" size="2048" source="CrossTab:Header:y:-417:Concat:" type="V_WString" />
+            <Field name="_416" size="2048" source="CrossTab:Header:y:-416:Concat:" type="V_WString" />
+            <Field name="_415" size="2048" source="CrossTab:Header:y:-415:Concat:" type="V_WString" />
+            <Field name="_413" size="2048" source="CrossTab:Header:y:-413:Concat:" type="V_WString" />
+            <Field name="_412" size="2048" source="CrossTab:Header:y:-412:Concat:" type="V_WString" />
+            <Field name="_411" size="2048" source="CrossTab:Header:y:-411:Concat:" type="V_WString" />
+            <Field name="_410" size="2048" source="CrossTab:Header:y:-410:Concat:" type="V_WString" />
+            <Field name="_409" size="2048" source="CrossTab:Header:y:-409:Concat:" type="V_WString" />
+            <Field name="_408" size="2048" source="CrossTab:Header:y:-408:Concat:" type="V_WString" />
+            <Field name="_406" size="2048" source="CrossTab:Header:y:-406:Concat:" type="V_WString" />
+            <Field name="_405" size="2048" source="CrossTab:Header:y:-405:Concat:" type="V_WString" />
+            <Field name="_404" size="2048" source="CrossTab:Header:y:-404:Concat:" type="V_WString" />
+            <Field name="_403" size="2048" source="CrossTab:Header:y:-403:Concat:" type="V_WString" />
+            <Field name="_402" size="2048" source="CrossTab:Header:y:-402:Concat:" type="V_WString" />
+            <Field name="_401" size="2048" source="CrossTab:Header:y:-401:Concat:" type="V_WString" />
+            <Field name="_399" size="2048" source="CrossTab:Header:y:-399:Concat:" type="V_WString" />
+            <Field name="_398" size="2048" source="CrossTab:Header:y:-398:Concat:" type="V_WString" />
+            <Field name="_397" size="2048" source="CrossTab:Header:y:-397:Concat:" type="V_WString" />
+            <Field name="_396" size="2048" source="CrossTab:Header:y:-396:Concat:" type="V_WString" />
+            <Field name="_395" size="2048" source="CrossTab:Header:y:-395:Concat:" type="V_WString" />
+            <Field name="_394" size="2048" source="CrossTab:Header:y:-394:Concat:" type="V_WString" />
+            <Field name="_392" size="2048" source="CrossTab:Header:y:-392:Concat:" type="V_WString" />
+            <Field name="_391" size="2048" source="CrossTab:Header:y:-391:Concat:" type="V_WString" />
+            <Field name="_390" size="2048" source="CrossTab:Header:y:-390:Concat:" type="V_WString" />
+            <Field name="_389" size="2048" source="CrossTab:Header:y:-389:Concat:" type="V_WString" />
+            <Field name="_388" size="2048" source="CrossTab:Header:y:-388:Concat:" type="V_WString" />
+            <Field name="_387" size="2048" source="CrossTab:Header:y:-387:Concat:" type="V_WString" />
+            <Field name="_385" size="2048" source="CrossTab:Header:y:-385:Concat:" type="V_WString" />
+            <Field name="_384" size="2048" source="CrossTab:Header:y:-384:Concat:" type="V_WString" />
+            <Field name="_383" size="2048" source="CrossTab:Header:y:-383:Concat:" type="V_WString" />
+            <Field name="_382" size="2048" source="CrossTab:Header:y:-382:Concat:" type="V_WString" />
+            <Field name="_381" size="2048" source="CrossTab:Header:y:-381:Concat:" type="V_WString" />
+            <Field name="_380" size="2048" source="CrossTab:Header:y:-380:Concat:" type="V_WString" />
+            <Field name="_378" size="2048" source="CrossTab:Header:y:-378:Concat:" type="V_WString" />
+            <Field name="_377" size="2048" source="CrossTab:Header:y:-377:Concat:" type="V_WString" />
+            <Field name="_376" size="2048" source="CrossTab:Header:y:-376:Concat:" type="V_WString" />
+            <Field name="_375" size="2048" source="CrossTab:Header:y:-375:Concat:" type="V_WString" />
+            <Field name="_374" size="2048" source="CrossTab:Header:y:-374:Concat:" type="V_WString" />
+            <Field name="_373" size="2048" source="CrossTab:Header:y:-373:Concat:" type="V_WString" />
+            <Field name="_371" size="2048" source="CrossTab:Header:y:-371:Concat:" type="V_WString" />
+            <Field name="_370" size="2048" source="CrossTab:Header:y:-370:Concat:" type="V_WString" />
+            <Field name="_369" size="2048" source="CrossTab:Header:y:-369:Concat:" type="V_WString" />
+            <Field name="_368" size="2048" source="CrossTab:Header:y:-368:Concat:" type="V_WString" />
+            <Field name="_367" size="2048" source="CrossTab:Header:y:-367:Concat:" type="V_WString" />
+            <Field name="_366" size="2048" source="CrossTab:Header:y:-366:Concat:" type="V_WString" />
+            <Field name="_364" size="2048" source="CrossTab:Header:y:-364:Concat:" type="V_WString" />
+            <Field name="_363" size="2048" source="CrossTab:Header:y:-363:Concat:" type="V_WString" />
+            <Field name="_362" size="2048" source="CrossTab:Header:y:-362:Concat:" type="V_WString" />
+            <Field name="_361" size="2048" source="CrossTab:Header:y:-361:Concat:" type="V_WString" />
+            <Field name="_360" size="2048" source="CrossTab:Header:y:-360:Concat:" type="V_WString" />
+            <Field name="_359" size="2048" source="CrossTab:Header:y:-359:Concat:" type="V_WString" />
+            <Field name="_357" size="2048" source="CrossTab:Header:y:-357:Concat:" type="V_WString" />
+            <Field name="_356" size="2048" source="CrossTab:Header:y:-356:Concat:" type="V_WString" />
+            <Field name="_355" size="2048" source="CrossTab:Header:y:-355:Concat:" type="V_WString" />
+            <Field name="_354" size="2048" source="CrossTab:Header:y:-354:Concat:" type="V_WString" />
+            <Field name="_353" size="2048" source="CrossTab:Header:y:-353:Concat:" type="V_WString" />
+            <Field name="_352" size="2048" source="CrossTab:Header:y:-352:Concat:" type="V_WString" />
+            <Field name="_350" size="2048" source="CrossTab:Header:y:-350:Concat:" type="V_WString" />
+            <Field name="_349" size="2048" source="CrossTab:Header:y:-349:Concat:" type="V_WString" />
+            <Field name="_348" size="2048" source="CrossTab:Header:y:-348:Concat:" type="V_WString" />
+            <Field name="_347" size="2048" source="CrossTab:Header:y:-347:Concat:" type="V_WString" />
+            <Field name="_346" size="2048" source="CrossTab:Header:y:-346:Concat:" type="V_WString" />
+            <Field name="_345" size="2048" source="CrossTab:Header:y:-345:Concat:" type="V_WString" />
+            <Field name="_343" size="2048" source="CrossTab:Header:y:-343:Concat:" type="V_WString" />
+            <Field name="_342" size="2048" source="CrossTab:Header:y:-342:Concat:" type="V_WString" />
+            <Field name="_341" size="2048" source="CrossTab:Header:y:-341:Concat:" type="V_WString" />
+            <Field name="_340" size="2048" source="CrossTab:Header:y:-340:Concat:" type="V_WString" />
+            <Field name="_339" size="2048" source="CrossTab:Header:y:-339:Concat:" type="V_WString" />
+            <Field name="_338" size="2048" source="CrossTab:Header:y:-338:Concat:" type="V_WString" />
+            <Field name="_336" size="2048" source="CrossTab:Header:y:-336:Concat:" type="V_WString" />
+            <Field name="_335" size="2048" source="CrossTab:Header:y:-335:Concat:" type="V_WString" />
+            <Field name="_334" size="2048" source="CrossTab:Header:y:-334:Concat:" type="V_WString" />
+            <Field name="_333" size="2048" source="CrossTab:Header:y:-333:Concat:" type="V_WString" />
+            <Field name="_332" size="2048" source="CrossTab:Header:y:-332:Concat:" type="V_WString" />
+            <Field name="_331" size="2048" source="CrossTab:Header:y:-331:Concat:" type="V_WString" />
+            <Field name="_329" size="2048" source="CrossTab:Header:y:-329:Concat:" type="V_WString" />
+            <Field name="_328" size="2048" source="CrossTab:Header:y:-328:Concat:" type="V_WString" />
+            <Field name="_327" size="2048" source="CrossTab:Header:y:-327:Concat:" type="V_WString" />
+            <Field name="_326" size="2048" source="CrossTab:Header:y:-326:Concat:" type="V_WString" />
+            <Field name="_325" size="2048" source="CrossTab:Header:y:-325:Concat:" type="V_WString" />
+            <Field name="_324" size="2048" source="CrossTab:Header:y:-324:Concat:" type="V_WString" />
+            <Field name="_322" size="2048" source="CrossTab:Header:y:-322:Concat:" type="V_WString" />
+            <Field name="_321" size="2048" source="CrossTab:Header:y:-321:Concat:" type="V_WString" />
+            <Field name="_320" size="2048" source="CrossTab:Header:y:-320:Concat:" type="V_WString" />
+            <Field name="_319" size="2048" source="CrossTab:Header:y:-319:Concat:" type="V_WString" />
+            <Field name="_318" size="2048" source="CrossTab:Header:y:-318:Concat:" type="V_WString" />
+            <Field name="_317" size="2048" source="CrossTab:Header:y:-317:Concat:" type="V_WString" />
+            <Field name="_315" size="2048" source="CrossTab:Header:y:-315:Concat:" type="V_WString" />
+            <Field name="_314" size="2048" source="CrossTab:Header:y:-314:Concat:" type="V_WString" />
+            <Field name="_313" size="2048" source="CrossTab:Header:y:-313:Concat:" type="V_WString" />
+            <Field name="_312" size="2048" source="CrossTab:Header:y:-312:Concat:" type="V_WString" />
+            <Field name="_311" size="2048" source="CrossTab:Header:y:-311:Concat:" type="V_WString" />
+            <Field name="_310" size="2048" source="CrossTab:Header:y:-310:Concat:" type="V_WString" />
+            <Field name="_308" size="2048" source="CrossTab:Header:y:-308:Concat:" type="V_WString" />
+            <Field name="_307" size="2048" source="CrossTab:Header:y:-307:Concat:" type="V_WString" />
+            <Field name="_306" size="2048" source="CrossTab:Header:y:-306:Concat:" type="V_WString" />
+            <Field name="_305" size="2048" source="CrossTab:Header:y:-305:Concat:" type="V_WString" />
+            <Field name="_304" size="2048" source="CrossTab:Header:y:-304:Concat:" type="V_WString" />
+            <Field name="_303" size="2048" source="CrossTab:Header:y:-303:Concat:" type="V_WString" />
+            <Field name="_301" size="2048" source="CrossTab:Header:y:-301:Concat:" type="V_WString" />
+            <Field name="_300" size="2048" source="CrossTab:Header:y:-300:Concat:" type="V_WString" />
+            <Field name="_299" size="2048" source="CrossTab:Header:y:-299:Concat:" type="V_WString" />
+            <Field name="_298" size="2048" source="CrossTab:Header:y:-298:Concat:" type="V_WString" />
+            <Field name="_297" size="2048" source="CrossTab:Header:y:-297:Concat:" type="V_WString" />
+            <Field name="_296" size="2048" source="CrossTab:Header:y:-296:Concat:" type="V_WString" />
+            <Field name="_294" size="2048" source="CrossTab:Header:y:-294:Concat:" type="V_WString" />
+            <Field name="_293" size="2048" source="CrossTab:Header:y:-293:Concat:" type="V_WString" />
+            <Field name="_292" size="2048" source="CrossTab:Header:y:-292:Concat:" type="V_WString" />
+            <Field name="_291" size="2048" source="CrossTab:Header:y:-291:Concat:" type="V_WString" />
+            <Field name="_290" size="2048" source="CrossTab:Header:y:-290:Concat:" type="V_WString" />
+            <Field name="_289" size="2048" source="CrossTab:Header:y:-289:Concat:" type="V_WString" />
+            <Field name="_287" size="2048" source="CrossTab:Header:y:-287:Concat:" type="V_WString" />
+            <Field name="_286" size="2048" source="CrossTab:Header:y:-286:Concat:" type="V_WString" />
+            <Field name="_285" size="2048" source="CrossTab:Header:y:-285:Concat:" type="V_WString" />
+            <Field name="_284" size="2048" source="CrossTab:Header:y:-284:Concat:" type="V_WString" />
+            <Field name="_283" size="2048" source="CrossTab:Header:y:-283:Concat:" type="V_WString" />
+            <Field name="_282" size="2048" source="CrossTab:Header:y:-282:Concat:" type="V_WString" />
+            <Field name="_280" size="2048" source="CrossTab:Header:y:-280:Concat:" type="V_WString" />
+            <Field name="_279" size="2048" source="CrossTab:Header:y:-279:Concat:" type="V_WString" />
+            <Field name="_278" size="2048" source="CrossTab:Header:y:-278:Concat:" type="V_WString" />
+            <Field name="_277" size="2048" source="CrossTab:Header:y:-277:Concat:" type="V_WString" />
+            <Field name="_276" size="2048" source="CrossTab:Header:y:-276:Concat:" type="V_WString" />
+            <Field name="_275" size="2048" source="CrossTab:Header:y:-275:Concat:" type="V_WString" />
+            <Field name="_273" size="2048" source="CrossTab:Header:y:-273:Concat:" type="V_WString" />
+            <Field name="_272" size="2048" source="CrossTab:Header:y:-272:Concat:" type="V_WString" />
+            <Field name="_271" size="2048" source="CrossTab:Header:y:-271:Concat:" type="V_WString" />
+            <Field name="_270" size="2048" source="CrossTab:Header:y:-270:Concat:" type="V_WString" />
+            <Field name="_269" size="2048" source="CrossTab:Header:y:-269:Concat:" type="V_WString" />
+            <Field name="_268" size="2048" source="CrossTab:Header:y:-268:Concat:" type="V_WString" />
+            <Field name="_266" size="2048" source="CrossTab:Header:y:-266:Concat:" type="V_WString" />
+            <Field name="_265" size="2048" source="CrossTab:Header:y:-265:Concat:" type="V_WString" />
+            <Field name="_264" size="2048" source="CrossTab:Header:y:-264:Concat:" type="V_WString" />
+            <Field name="_263" size="2048" source="CrossTab:Header:y:-263:Concat:" type="V_WString" />
+            <Field name="_262" size="2048" source="CrossTab:Header:y:-262:Concat:" type="V_WString" />
+            <Field name="_261" size="2048" source="CrossTab:Header:y:-261:Concat:" type="V_WString" />
+            <Field name="_259" size="2048" source="CrossTab:Header:y:-259:Concat:" type="V_WString" />
+            <Field name="_258" size="2048" source="CrossTab:Header:y:-258:Concat:" type="V_WString" />
+            <Field name="_257" size="2048" source="CrossTab:Header:y:-257:Concat:" type="V_WString" />
+            <Field name="_256" size="2048" source="CrossTab:Header:y:-256:Concat:" type="V_WString" />
+            <Field name="_255" size="2048" source="CrossTab:Header:y:-255:Concat:" type="V_WString" />
+            <Field name="_254" size="2048" source="CrossTab:Header:y:-254:Concat:" type="V_WString" />
+            <Field name="_252" size="2048" source="CrossTab:Header:y:-252:Concat:" type="V_WString" />
+            <Field name="_251" size="2048" source="CrossTab:Header:y:-251:Concat:" type="V_WString" />
+            <Field name="_250" size="2048" source="CrossTab:Header:y:-250:Concat:" type="V_WString" />
+            <Field name="_249" size="2048" source="CrossTab:Header:y:-249:Concat:" type="V_WString" />
+            <Field name="_248" size="2048" source="CrossTab:Header:y:-248:Concat:" type="V_WString" />
+            <Field name="_245" size="2048" source="CrossTab:Header:y:-245:Concat:" type="V_WString" />
+            <Field name="_244" size="2048" source="CrossTab:Header:y:-244:Concat:" type="V_WString" />
+            <Field name="_243" size="2048" source="CrossTab:Header:y:-243:Concat:" type="V_WString" />
+            <Field name="_242" size="2048" source="CrossTab:Header:y:-242:Concat:" type="V_WString" />
+            <Field name="_241" size="2048" source="CrossTab:Header:y:-241:Concat:" type="V_WString" />
+            <Field name="_240" size="2048" source="CrossTab:Header:y:-240:Concat:" type="V_WString" />
+            <Field name="_238" size="2048" source="CrossTab:Header:y:-238:Concat:" type="V_WString" />
+            <Field name="_237" size="2048" source="CrossTab:Header:y:-237:Concat:" type="V_WString" />
+            <Field name="_235" size="2048" source="CrossTab:Header:y:-235:Concat:" type="V_WString" />
+            <Field name="_234" size="2048" source="CrossTab:Header:y:-234:Concat:" type="V_WString" />
+            <Field name="_233" size="2048" source="CrossTab:Header:y:-233:Concat:" type="V_WString" />
+            <Field name="_231" size="2048" source="CrossTab:Header:y:-231:Concat:" type="V_WString" />
+            <Field name="_230" size="2048" source="CrossTab:Header:y:-230:Concat:" type="V_WString" />
+            <Field name="_229" size="2048" source="CrossTab:Header:y:-229:Concat:" type="V_WString" />
+            <Field name="_228" size="2048" source="CrossTab:Header:y:-228:Concat:" type="V_WString" />
+            <Field name="_227" size="2048" source="CrossTab:Header:y:-227:Concat:" type="V_WString" />
+            <Field name="_226" size="2048" source="CrossTab:Header:y:-226:Concat:" type="V_WString" />
+            <Field name="_224" size="2048" source="CrossTab:Header:y:-224:Concat:" type="V_WString" />
+            <Field name="_223" size="2048" source="CrossTab:Header:y:-223:Concat:" type="V_WString" />
+            <Field name="_222" size="2048" source="CrossTab:Header:y:-222:Concat:" type="V_WString" />
+            <Field name="_221" size="2048" source="CrossTab:Header:y:-221:Concat:" type="V_WString" />
+            <Field name="_220" size="2048" source="CrossTab:Header:y:-220:Concat:" type="V_WString" />
+            <Field name="_219" size="2048" source="CrossTab:Header:y:-219:Concat:" type="V_WString" />
+            <Field name="_217" size="2048" source="CrossTab:Header:y:-217:Concat:" type="V_WString" />
+            <Field name="_216" size="2048" source="CrossTab:Header:y:-216:Concat:" type="V_WString" />
+            <Field name="_215" size="2048" source="CrossTab:Header:y:-215:Concat:" type="V_WString" />
+            <Field name="_214" size="2048" source="CrossTab:Header:y:-214:Concat:" type="V_WString" />
+            <Field name="_213" size="2048" source="CrossTab:Header:y:-213:Concat:" type="V_WString" />
+            <Field name="_212" size="2048" source="CrossTab:Header:y:-212:Concat:" type="V_WString" />
+            <Field name="_210" size="2048" source="CrossTab:Header:y:-210:Concat:" type="V_WString" />
+            <Field name="_209" size="2048" source="CrossTab:Header:y:-209:Concat:" type="V_WString" />
+            <Field name="_208" size="2048" source="CrossTab:Header:y:-208:Concat:" type="V_WString" />
+            <Field name="_207" size="2048" source="CrossTab:Header:y:-207:Concat:" type="V_WString" />
+            <Field name="_206" size="2048" source="CrossTab:Header:y:-206:Concat:" type="V_WString" />
+            <Field name="_205" size="2048" source="CrossTab:Header:y:-205:Concat:" type="V_WString" />
+            <Field name="_203" size="2048" source="CrossTab:Header:y:-203:Concat:" type="V_WString" />
+            <Field name="_202" size="2048" source="CrossTab:Header:y:-202:Concat:" type="V_WString" />
+            <Field name="_201" size="2048" source="CrossTab:Header:y:-201:Concat:" type="V_WString" />
+            <Field name="_200" size="2048" source="CrossTab:Header:y:-200:Concat:" type="V_WString" />
+            <Field name="_199" size="2048" source="CrossTab:Header:y:-199:Concat:" type="V_WString" />
+            <Field name="_198" size="2048" source="CrossTab:Header:y:-198:Concat:" type="V_WString" />
+            <Field name="_196" size="2048" source="CrossTab:Header:y:-196:Concat:" type="V_WString" />
+            <Field name="_195" size="2048" source="CrossTab:Header:y:-195:Concat:" type="V_WString" />
+            <Field name="_194" size="2048" source="CrossTab:Header:y:-194:Concat:" type="V_WString" />
+            <Field name="_193" size="2048" source="CrossTab:Header:y:-193:Concat:" type="V_WString" />
+            <Field name="_192" size="2048" source="CrossTab:Header:y:-192:Concat:" type="V_WString" />
+            <Field name="_191" size="2048" source="CrossTab:Header:y:-191:Concat:" type="V_WString" />
+            <Field name="_189" size="2048" source="CrossTab:Header:y:-189:Concat:" type="V_WString" />
+            <Field name="_188" size="2048" source="CrossTab:Header:y:-188:Concat:" type="V_WString" />
+            <Field name="_187" size="2048" source="CrossTab:Header:y:-187:Concat:" type="V_WString" />
+            <Field name="_186" size="2048" source="CrossTab:Header:y:-186:Concat:" type="V_WString" />
+            <Field name="_185" size="2048" source="CrossTab:Header:y:-185:Concat:" type="V_WString" />
+            <Field name="_184" size="2048" source="CrossTab:Header:y:-184:Concat:" type="V_WString" />
+            <Field name="_182" size="2048" source="CrossTab:Header:y:-182:Concat:" type="V_WString" />
+            <Field name="_181" size="2048" source="CrossTab:Header:y:-181:Concat:" type="V_WString" />
+            <Field name="_180" size="2048" source="CrossTab:Header:y:-180:Concat:" type="V_WString" />
+            <Field name="_179" size="2048" source="CrossTab:Header:y:-179:Concat:" type="V_WString" />
+            <Field name="_178" size="2048" source="CrossTab:Header:y:-178:Concat:" type="V_WString" />
+            <Field name="_177" size="2048" source="CrossTab:Header:y:-177:Concat:" type="V_WString" />
+            <Field name="_175" size="2048" source="CrossTab:Header:y:-175:Concat:" type="V_WString" />
+            <Field name="_174" size="2048" source="CrossTab:Header:y:-174:Concat:" type="V_WString" />
+            <Field name="_173" size="2048" source="CrossTab:Header:y:-173:Concat:" type="V_WString" />
+            <Field name="_172" size="2048" source="CrossTab:Header:y:-172:Concat:" type="V_WString" />
+            <Field name="_171" size="2048" source="CrossTab:Header:y:-171:Concat:" type="V_WString" />
+            <Field name="_170" size="2048" source="CrossTab:Header:y:-170:Concat:" type="V_WString" />
+            <Field name="_168" size="2048" source="CrossTab:Header:y:-168:Concat:" type="V_WString" />
+            <Field name="_167" size="2048" source="CrossTab:Header:y:-167:Concat:" type="V_WString" />
+            <Field name="_166" size="2048" source="CrossTab:Header:y:-166:Concat:" type="V_WString" />
+            <Field name="_165" size="2048" source="CrossTab:Header:y:-165:Concat:" type="V_WString" />
+            <Field name="_164" size="2048" source="CrossTab:Header:y:-164:Concat:" type="V_WString" />
+            <Field name="_163" size="2048" source="CrossTab:Header:y:-163:Concat:" type="V_WString" />
+            <Field name="_161" size="2048" source="CrossTab:Header:y:-161:Concat:" type="V_WString" />
+            <Field name="_160" size="2048" source="CrossTab:Header:y:-160:Concat:" type="V_WString" />
+            <Field name="_159" size="2048" source="CrossTab:Header:y:-159:Concat:" type="V_WString" />
+            <Field name="_158" size="2048" source="CrossTab:Header:y:-158:Concat:" type="V_WString" />
+            <Field name="_157" size="2048" source="CrossTab:Header:y:-157:Concat:" type="V_WString" />
+            <Field name="_156" size="2048" source="CrossTab:Header:y:-156:Concat:" type="V_WString" />
+            <Field name="_154" size="2048" source="CrossTab:Header:y:-154:Concat:" type="V_WString" />
+            <Field name="_153" size="2048" source="CrossTab:Header:y:-153:Concat:" type="V_WString" />
+            <Field name="_152" size="2048" source="CrossTab:Header:y:-152:Concat:" type="V_WString" />
+            <Field name="_151" size="2048" source="CrossTab:Header:y:-151:Concat:" type="V_WString" />
+            <Field name="_150" size="2048" source="CrossTab:Header:y:-150:Concat:" type="V_WString" />
+            <Field name="_149" size="2048" source="CrossTab:Header:y:-149:Concat:" type="V_WString" />
+            <Field name="_147" size="2048" source="CrossTab:Header:y:-147:Concat:" type="V_WString" />
+            <Field name="_146" size="2048" source="CrossTab:Header:y:-146:Concat:" type="V_WString" />
+            <Field name="_145" size="2048" source="CrossTab:Header:y:-145:Concat:" type="V_WString" />
+            <Field name="_144" size="2048" source="CrossTab:Header:y:-144:Concat:" type="V_WString" />
+            <Field name="_143" size="2048" source="CrossTab:Header:y:-143:Concat:" type="V_WString" />
+            <Field name="_142" size="2048" source="CrossTab:Header:y:-142:Concat:" type="V_WString" />
+            <Field name="_140" size="2048" source="CrossTab:Header:y:-140:Concat:" type="V_WString" />
+            <Field name="_139" size="2048" source="CrossTab:Header:y:-139:Concat:" type="V_WString" />
+            <Field name="_138" size="2048" source="CrossTab:Header:y:-138:Concat:" type="V_WString" />
+            <Field name="_137" size="2048" source="CrossTab:Header:y:-137:Concat:" type="V_WString" />
+            <Field name="_136" size="2048" source="CrossTab:Header:y:-136:Concat:" type="V_WString" />
+            <Field name="_135" size="2048" source="CrossTab:Header:y:-135:Concat:" type="V_WString" />
+            <Field name="_133" size="2048" source="CrossTab:Header:y:-133:Concat:" type="V_WString" />
+            <Field name="_132" size="2048" source="CrossTab:Header:y:-132:Concat:" type="V_WString" />
+            <Field name="_131" size="2048" source="CrossTab:Header:y:-131:Concat:" type="V_WString" />
+            <Field name="_130" size="2048" source="CrossTab:Header:y:-130:Concat:" type="V_WString" />
+            <Field name="_129" size="2048" source="CrossTab:Header:y:-129:Concat:" type="V_WString" />
+            <Field name="_128" size="2048" source="CrossTab:Header:y:-128:Concat:" type="V_WString" />
+            <Field name="_126" size="2048" source="CrossTab:Header:y:-126:Concat:" type="V_WString" />
+            <Field name="_125" size="2048" source="CrossTab:Header:y:-125:Concat:" type="V_WString" />
+            <Field name="_124" size="2048" source="CrossTab:Header:y:-124:Concat:" type="V_WString" />
+            <Field name="_123" size="2048" source="CrossTab:Header:y:-123:Concat:" type="V_WString" />
+            <Field name="_122" size="2048" source="CrossTab:Header:y:-122:Concat:" type="V_WString" />
+            <Field name="_121" size="2048" source="CrossTab:Header:y:-121:Concat:" type="V_WString" />
+            <Field name="_119" size="2048" source="CrossTab:Header:y:-119:Concat:" type="V_WString" />
+            <Field name="_118" size="2048" source="CrossTab:Header:y:-118:Concat:" type="V_WString" />
+            <Field name="_117" size="2048" source="CrossTab:Header:y:-117:Concat:" type="V_WString" />
+            <Field name="_116" size="2048" source="CrossTab:Header:y:-116:Concat:" type="V_WString" />
+            <Field name="_115" size="2048" source="CrossTab:Header:y:-115:Concat:" type="V_WString" />
+            <Field name="_114" size="2048" source="CrossTab:Header:y:-114:Concat:" type="V_WString" />
+            <Field name="_112" size="2048" source="CrossTab:Header:y:-112:Concat:" type="V_WString" />
+            <Field name="_111" size="2048" source="CrossTab:Header:y:-111:Concat:" type="V_WString" />
+            <Field name="_110" size="2048" source="CrossTab:Header:y:-110:Concat:" type="V_WString" />
+            <Field name="_109" size="2048" source="CrossTab:Header:y:-109:Concat:" type="V_WString" />
+            <Field name="_108" size="2048" source="CrossTab:Header:y:-108:Concat:" type="V_WString" />
+            <Field name="_107" size="2048" source="CrossTab:Header:y:-107:Concat:" type="V_WString" />
+            <Field name="_105" size="2048" source="CrossTab:Header:y:-105:Concat:" type="V_WString" />
+            <Field name="_104" size="2048" source="CrossTab:Header:y:-104:Concat:" type="V_WString" />
+            <Field name="_103" size="2048" source="CrossTab:Header:y:-103:Concat:" type="V_WString" />
+            <Field name="_102" size="2048" source="CrossTab:Header:y:-102:Concat:" type="V_WString" />
+            <Field name="_101" size="2048" source="CrossTab:Header:y:-101:Concat:" type="V_WString" />
+            <Field name="_100" size="2048" source="CrossTab:Header:y:-100:Concat:" type="V_WString" />
+            <Field name="_98" size="2048" source="CrossTab:Header:y:-98:Concat:" type="V_WString" />
+            <Field name="_97" size="2048" source="CrossTab:Header:y:-97:Concat:" type="V_WString" />
+            <Field name="_96" size="2048" source="CrossTab:Header:y:-96:Concat:" type="V_WString" />
+            <Field name="_95" size="2048" source="CrossTab:Header:y:-95:Concat:" type="V_WString" />
+            <Field name="_94" size="2048" source="CrossTab:Header:y:-94:Concat:" type="V_WString" />
+            <Field name="_93" size="2048" source="CrossTab:Header:y:-93:Concat:" type="V_WString" />
+            <Field name="_91" size="2048" source="CrossTab:Header:y:-91:Concat:" type="V_WString" />
+            <Field name="_90" size="2048" source="CrossTab:Header:y:-90:Concat:" type="V_WString" />
+            <Field name="_89" size="2048" source="CrossTab:Header:y:-89:Concat:" type="V_WString" />
+            <Field name="_88" size="2048" source="CrossTab:Header:y:-88:Concat:" type="V_WString" />
+            <Field name="_87" size="2048" source="CrossTab:Header:y:-87:Concat:" type="V_WString" />
+            <Field name="_86" size="2048" source="CrossTab:Header:y:-86:Concat:" type="V_WString" />
+            <Field name="_84" size="2048" source="CrossTab:Header:y:-84:Concat:" type="V_WString" />
+            <Field name="_83" size="2048" source="CrossTab:Header:y:-83:Concat:" type="V_WString" />
+            <Field name="_82" size="2048" source="CrossTab:Header:y:-82:Concat:" type="V_WString" />
+            <Field name="_81" size="2048" source="CrossTab:Header:y:-81:Concat:" type="V_WString" />
+            <Field name="_80" size="2048" source="CrossTab:Header:y:-80:Concat:" type="V_WString" />
+            <Field name="_79" size="2048" source="CrossTab:Header:y:-79:Concat:" type="V_WString" />
+            <Field name="_77" size="2048" source="CrossTab:Header:y:-77:Concat:" type="V_WString" />
+            <Field name="_76" size="2048" source="CrossTab:Header:y:-76:Concat:" type="V_WString" />
+            <Field name="_75" size="2048" source="CrossTab:Header:y:-75:Concat:" type="V_WString" />
+            <Field name="_74" size="2048" source="CrossTab:Header:y:-74:Concat:" type="V_WString" />
+            <Field name="_73" size="2048" source="CrossTab:Header:y:-73:Concat:" type="V_WString" />
+            <Field name="_72" size="2048" source="CrossTab:Header:y:-72:Concat:" type="V_WString" />
+            <Field name="_70" size="2048" source="CrossTab:Header:y:-70:Concat:" type="V_WString" />
+            <Field name="_69" size="2048" source="CrossTab:Header:y:-69:Concat:" type="V_WString" />
+            <Field name="_68" size="2048" source="CrossTab:Header:y:-68:Concat:" type="V_WString" />
+            <Field name="_67" size="2048" source="CrossTab:Header:y:-67:Concat:" type="V_WString" />
+            <Field name="_66" size="2048" source="CrossTab:Header:y:-66:Concat:" type="V_WString" />
+            <Field name="_65" size="2048" source="CrossTab:Header:y:-65:Concat:" type="V_WString" />
+            <Field name="_63" size="2048" source="CrossTab:Header:y:-63:Concat:" type="V_WString" />
+            <Field name="_62" size="2048" source="CrossTab:Header:y:-62:Concat:" type="V_WString" />
+            <Field name="_61" size="2048" source="CrossTab:Header:y:-61:Concat:" type="V_WString" />
+            <Field name="_60" size="2048" source="CrossTab:Header:y:-60:Concat:" type="V_WString" />
+            <Field name="_59" size="2048" source="CrossTab:Header:y:-59:Concat:" type="V_WString" />
+            <Field name="_58" size="2048" source="CrossTab:Header:y:-58:Concat:" type="V_WString" />
+            <Field name="_56" size="2048" source="CrossTab:Header:y:-56:Concat:" type="V_WString" />
+            <Field name="_54" size="2048" source="CrossTab:Header:y:-54:Concat:" type="V_WString" />
+            <Field name="_53" size="2048" source="CrossTab:Header:y:-53:Concat:" type="V_WString" />
+            <Field name="_52" size="2048" source="CrossTab:Header:y:-52:Concat:" type="V_WString" />
+            <Field name="_51" size="2048" source="CrossTab:Header:y:-51:Concat:" type="V_WString" />
+            <Field name="_49" size="2048" source="CrossTab:Header:y:-49:Concat:" type="V_WString" />
+            <Field name="_48" size="2048" source="CrossTab:Header:y:-48:Concat:" type="V_WString" />
+            <Field name="_47" size="2048" source="CrossTab:Header:y:-47:Concat:" type="V_WString" />
+            <Field name="_46" size="2048" source="CrossTab:Header:y:-46:Concat:" type="V_WString" />
+            <Field name="_45" size="2048" source="CrossTab:Header:y:-45:Concat:" type="V_WString" />
+            <Field name="_44" size="2048" source="CrossTab:Header:y:-44:Concat:" type="V_WString" />
+            <Field name="_42" size="2048" source="CrossTab:Header:y:-42:Concat:" type="V_WString" />
+            <Field name="_41" size="2048" source="CrossTab:Header:y:-41:Concat:" type="V_WString" />
+            <Field name="_40" size="2048" source="CrossTab:Header:y:-40:Concat:" type="V_WString" />
+            <Field name="_39" size="2048" source="CrossTab:Header:y:-39:Concat:" type="V_WString" />
+            <Field name="_38" size="2048" source="CrossTab:Header:y:-38:Concat:" type="V_WString" />
+            <Field name="_37" size="2048" source="CrossTab:Header:y:-37:Concat:" type="V_WString" />
+            <Field name="_35" size="2048" source="CrossTab:Header:y:-35:Concat:" type="V_WString" />
+            <Field name="_34" size="2048" source="CrossTab:Header:y:-34:Concat:" type="V_WString" />
+            <Field name="_33" size="2048" source="CrossTab:Header:y:-33:Concat:" type="V_WString" />
+            <Field name="_32" size="2048" source="CrossTab:Header:y:-32:Concat:" type="V_WString" />
+            <Field name="_31" size="2048" source="CrossTab:Header:y:-31:Concat:" type="V_WString" />
+            <Field name="_30" size="2048" source="CrossTab:Header:y:-30:Concat:" type="V_WString" />
+            <Field name="_28" size="2048" source="CrossTab:Header:y:-28:Concat:" type="V_WString" />
+            <Field name="_27" size="2048" source="CrossTab:Header:y:-27:Concat:" type="V_WString" />
+            <Field name="_26" size="2048" source="CrossTab:Header:y:-26:Concat:" type="V_WString" />
+            <Field name="_25" size="2048" source="CrossTab:Header:y:-25:Concat:" type="V_WString" />
+            <Field name="_24" size="2048" source="CrossTab:Header:y:-24:Concat:" type="V_WString" />
+            <Field name="_23" size="2048" source="CrossTab:Header:y:-23:Concat:" type="V_WString" />
+            <Field name="_21" size="2048" source="CrossTab:Header:y:-21:Concat:" type="V_WString" />
+            <Field name="_20" size="2048" source="CrossTab:Header:y:-20:Concat:" type="V_WString" />
+            <Field name="_19" size="2048" source="CrossTab:Header:y:-19:Concat:" type="V_WString" />
+            <Field name="_18" size="2048" source="CrossTab:Header:y:-18:Concat:" type="V_WString" />
+            <Field name="_17" size="2048" source="CrossTab:Header:y:-17:Concat:" type="V_WString" />
+            <Field name="_16" size="2048" source="CrossTab:Header:y:-16:Concat:" type="V_WString" />
+            <Field name="_14" size="2048" source="CrossTab:Header:y:-14:Concat:" type="V_WString" />
+            <Field name="_13" size="2048" source="CrossTab:Header:y:-13:Concat:" type="V_WString" />
+            <Field name="_12" size="2048" source="CrossTab:Header:y:-12:Concat:" type="V_WString" />
+            <Field name="_11" size="2048" source="CrossTab:Header:y:-11:Concat:" type="V_WString" />
+            <Field name="_10" size="2048" source="CrossTab:Header:y:-10:Concat:" type="V_WString" />
+            <Field name="_9" size="2048" source="CrossTab:Header:y:-9:Concat:" type="V_WString" />
+            <Field name="_7" size="2048" source="CrossTab:Header:y:-7:Concat:" type="V_WString" />
+            <Field name="_6" size="2048" source="CrossTab:Header:y:-6:Concat:" type="V_WString" />
+            <Field name="_5" size="2048" source="CrossTab:Header:y:-5:Concat:" type="V_WString" />
+            <Field name="_4" size="2048" source="CrossTab:Header:y:-4:Concat:" type="V_WString" />
+            <Field name="_3" size="2048" source="CrossTab:Header:y:-3:Concat:" type="V_WString" />
+            <Field name="_2" size="2048" source="CrossTab:Header:y:-2:Concat:" type="V_WString" />
+            <Field name="0" size="2048" source="CrossTab:Header:y:0:Concat:" type="V_WString" />
+            <Field name="1" size="2048" source="CrossTab:Header:y:1:Concat:" type="V_WString" />
+            <Field name="2" size="2048" source="CrossTab:Header:y:2:Concat:" type="V_WString" />
+            <Field name="3" size="2048" source="CrossTab:Header:y:3:Concat:" type="V_WString" />
+            <Field name="4" size="2048" source="CrossTab:Header:y:4:Concat:" type="V_WString" />
+            <Field name="5" size="2048" source="CrossTab:Header:y:5:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">F:\Dropbox\python\AdventCode2021\Inputs\Day_13\input1.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>input1.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: F:\Dropbox\python\AdventCode2021\Inputs\Day_13\input1.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="402" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="702" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings>
+        <Position x="1110" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>folder (21)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="folder.yxmc" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1458" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="y" action="GroupBy" rename="y" />
+            <SummarizeField field="x" action="GroupBy" rename="x" />
+            <SummarizeField field="iteration" action="First" rename="First_iteration" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1554" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="First_iteration" selected="True" type="V_WString" size="21" />
+            <SelectField field="Count" selected="True" type="WString" size="21" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1746" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="y" />
+          </GroupFields>
+          <HeaderField field="x" />
+          <DataField field="First_iteration" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="y" source="CrossTab:Group:First:" type="Int64" />
+            <Field name="0" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="1" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="2" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="3" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="5" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="6" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="7" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="8" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="10" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="11" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="12" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="13" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="15" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="16" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="17" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="18" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="20" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="21" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="22" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="23" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="25" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="26" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="27" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="28" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="30" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="31" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="32" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="33" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="35" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="36" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="37" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+            <Field name="38" size="21" source="Formula: CharFromInt(9609)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="y" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1266" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="iteration" action="Max" rename="Max_iteration" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1350" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="iteration" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Max_iteration" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2034" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_16808_ab8d552d0bc142068f00e8dd58e69508_\Engine_5084_f44d90b3ff2446778b808a53674a5808_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="1938" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="0" selected="True" Alignment="Right" />
+            <Field name="1" selected="True" Alignment="Right" />
+            <Field name="2" selected="True" Alignment="Right" />
+            <Field name="3" selected="True" Alignment="Right" />
+            <Field name="5" selected="True" Alignment="Right" />
+            <Field name="6" selected="True" Alignment="Right" />
+            <Field name="7" selected="True" Alignment="Right" />
+            <Field name="8" selected="True" Alignment="Right" />
+            <Field name="10" selected="True" Alignment="Right" />
+            <Field name="11" selected="True" Alignment="Right" />
+            <Field name="12" selected="True" Alignment="Right" />
+            <Field name="13" selected="True" Alignment="Right" />
+            <Field name="15" selected="True" Alignment="Right" />
+            <Field name="16" selected="True" Alignment="Right" />
+            <Field name="17" selected="True" Alignment="Right" />
+            <Field name="18" selected="True" Alignment="Right" />
+            <Field name="20" selected="True" Alignment="Right" />
+            <Field name="21" selected="True" Alignment="Right" />
+            <Field name="22" selected="True" Alignment="Right" />
+            <Field name="23" selected="True" Alignment="Right" />
+            <Field name="25" selected="True" Alignment="Right" />
+            <Field name="26" selected="True" Alignment="Right" />
+            <Field name="27" selected="True" Alignment="Right" />
+            <Field name="28" selected="True" Alignment="Right" />
+            <Field name="30" selected="True" Alignment="Right" />
+            <Field name="31" selected="True" Alignment="Right" />
+            <Field name="32" selected="True" Alignment="Right" />
+            <Field name="33" selected="True" Alignment="Right" />
+            <Field name="35" selected="True" Alignment="Right" />
+            <Field name="36" selected="True" Alignment="Right" />
+            <Field name="37" selected="True" Alignment="Right" />
+            <Field name="38" selected="True" Alignment="Right" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+            <Field name="y" selected="False" />
+            <Field name="x" selected="False" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1842" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1650" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="CharFromInt(9609)" field="First_iteration" size="21" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First_iteration = CharFromInt(9609)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="11" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="7" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="7" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Paper" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="FoldingInstructions" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output10" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output10" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>david_day_13</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="6c5326be-89d9-4628-a0fc-a7ec58283168" />
+      <Telemetry>
+        <PreviousWorkflowId value="05de4eda-2aa9-41f0-ba9e-e2e37c85b642" />
+        <OriginWorkflowId value="1dc3f830-bfc0-41ba-9620-61f95b6ac496" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
