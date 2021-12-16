@@ -1,0 +1,2202 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="426" width="336" height="252" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>IF we have reached the end at least once, use that info to prune the join a bit more</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="7" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2022" y="294" width="204" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Keep only paths that have a lower cost than the current lowest exit</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="7" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2238" y="294" width="240" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>If no new cell has been visited this turn, end.</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="7" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1086" y="90" width="564" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>For the cells visited in this iteration, keep only those that have not been visited in any other path, or those that have a lower cost than the lowest cost in previous visits.</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="7" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="606" y="90" width="468" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Possible next cells to visit from current position</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="402" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="4" />
+          <Fields>
+            <Field name="dx" />
+            <Field name="dy" />
+          </Fields>
+          <Data>
+            <r>
+              <c>-1</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>0</c>
+              <c>-1</c>
+            </r>
+            <r>
+              <c>0</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[neighbours
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[neighbours]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="726" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="TextInput:" type="V_WString" />
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="630" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="x" selected="True" type="Int64" size="8" />
+            <SelectField field="y" selected="True" type="Int64" size="8" />
+            <SelectField field="acc_cost" selected="True" type="Int64" size="8" />
+            <SelectField field="path" selected="True" type="V_WString" size="100000000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="390" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Path</Name>
+          <Abbrev>P</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="x" />
+                <Field name="y" />
+                <Field name="acc_cost" />
+                <Field name="path" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0</c>
+                  <c>0</c>
+                  <c>0</c>
+                  <c>(0,0)</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>P Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Byte" />
+            <Field name="y" source="TextInput:" type="Byte" />
+            <Field name="acc_cost" source="TextInput:" type="Byte" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="822" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="x+[dx]" field="next_x" size="8" type="Int64" />
+            <FormulaField expression="y+[dy]" field="next_y" size="8" type="Int64" />
+            <FormulaField expression="'('&#xA;+ ToString([next_x])&#xA;+','&#xA;+ tostring([next_y])&#xA;+')'" field="next_path" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_CountMatches([path], [next_path])" field="present" size="8" type="Int64" />
+            <FormulaField expression="[path]+[next_path]" field="path" size="100000000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>next_x = x+[dx]
+next_y = y+[dy]
+next_path = '('
++ ToString([next_x])
++','
++ tost...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+            <Field name="next_x" source="Formula: x+[dx]" type="Int64" />
+            <Field name="next_y" source="Formula: y+[dy]" type="Int64" />
+            <Field name="next_path" size="1073741823" source="Formula: '('&#xA;+ ToString([next_x])&#xA;+','&#xA;+ tostring([next_y])&#xA;+')'" type="V_WString" />
+            <Field name="present" source="Formula: REGEX_CountMatches([path], [next_path])" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1014" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RowID" />
+            <Field field="ColID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="next_x" />
+            <Field field="next_y" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_RowID" selected="True" rename="x" input="Left_" />
+                <SelectField field="Left_ColID" selected="True" rename="y" input="Left_" />
+                <SelectField field="Right_x" selected="False" input="Right_" />
+                <SelectField field="Right_y" selected="False" input="Right_" />
+                <SelectField field="Right_dx" selected="False" input="Right_" />
+                <SelectField field="Right_dy" selected="False" input="Right_" />
+                <SelectField field="Right_next_x" selected="False" input="Right_" />
+                <SelectField field="Right_next_y" selected="False" input="Right_" />
+                <SelectField field="Right_next_path" selected="False" input="Right_" />
+                <SelectField field="Right_present" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="ColID" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RowID" />
+            <Field field="ColID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="" />
+            <Field field="y" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+            <Field name="next_x" source="Formula: x+[dx]" type="Int64" />
+            <Field name="next_y" source="Formula: y+[dy]" type="Int64" />
+            <Field name="next_path" size="1073741823" source="Formula: '('&#xA;+ ToString([next_x])&#xA;+','&#xA;+ tostring([next_y])&#xA;+')'" type="V_WString" />
+            <Field name="present" source="Formula: REGEX_CountMatches([path], [next_path])" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="next_x" />
+            <Field field="next_y" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="918" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[present] = 0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[present] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+            <Field name="next_x" source="Formula: x+[dx]" type="Int64" />
+            <Field name="next_y" source="Formula: y+[dy]" type="Int64" />
+            <Field name="next_path" size="1073741823" source="Formula: '('&#xA;+ ToString([next_x])&#xA;+','&#xA;+ tostring([next_y])&#xA;+')'" type="V_WString" />
+            <Field name="present" source="Formula: REGEX_CountMatches([path], [next_path])" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+            <Field name="next_x" source="Formula: x+[dx]" type="Int64" />
+            <Field name="next_y" source="Formula: y+[dy]" type="Int64" />
+            <Field name="next_path" size="1073741823" source="Formula: '('&#xA;+ ToString([next_x])&#xA;+','&#xA;+ tostring([next_y])&#xA;+')'" type="V_WString" />
+            <Field name="present" source="Formula: REGEX_CountMatches([path], [next_path])" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="522" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RowID" selected="True" type="Int64" size="8" />
+            <SelectField field="Cost" selected="True" type="Int64" size="8" />
+            <SelectField field="ColID" selected="True" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="ColID" source="TextInput:" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="390" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev>D</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="100" />
+              <Fields>
+                <Field name="RowID" />
+                <Field name="Cost" />
+                <Field name="ColID" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>6</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>3</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>7</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>5</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>1</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>7</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>4</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>2</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>7</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>6</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>7</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>3</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>6</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>5</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>1</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>1</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>3</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>2</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>8</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>3</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>6</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>9</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>4</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>9</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>3</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>1</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>5</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>6</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>9</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>7</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>6</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>3</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>7</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>9</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>2</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>8</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>3</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>7</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>5</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>9</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>9</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>4</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>3</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>2</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>5</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>2</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>6</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>3</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>9</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>2</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>9</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>8</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>5</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>2</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>1</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>1</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>9</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>4</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>5</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>8</c>
+                  <c>8</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>1</c>
+                  <c>9</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>D Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowID" source="TextInput:" type="Byte" />
+            <Field name="Cost" source="TextInput:" type="Byte" />
+            <Field name="ColID" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1086" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Cost]+ [acc_cost]" field="acc_cost" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>update costs</AnnotationText>
+          <DefaultAnnotationText><![CDATA[acc_cost = [Cost]+ [acc_cost]
+]]></DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="" />
+            <Field field="y" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1482" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="x" action="GroupBy" rename="x" />
+            <SummarizeField field="y" action="GroupBy" rename="y" />
+            <SummarizeField field="acc_cost" action="Min" rename="Min_acc_cost" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="Summarize: GroupBy - x" type="Int64" />
+            <Field name="y" source="Summarize: GroupBy - y" type="Int64" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="Asc" />
+            <Field field="y" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1578" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="x" />
+            <Field field="y" />
+            <Field field="Min_acc_cost" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="x" />
+            <Field field="y" />
+            <Field field="acc_cost" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_x" selected="False" input="Left_" />
+                <SelectField field="Left_y" selected="False" input="Left_" />
+                <SelectField field="Left_Min_acc_cost" selected="False" input="Left_" />
+                <SelectField field="Right_Cost" selected="False" input="Right_" />
+                <SelectField field="Right_Min_acc_cost" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="x" source="Summarize: GroupBy - x" type="Int64" />
+            <Field name="y" source="Summarize: GroupBy - y" type="Int64" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="x" />
+            <Field field="y" />
+            <Field field="Min_acc_cost" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="x" />
+            <Field field="y" />
+            <Field field="acc_cost" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1866" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>x = y &amp;&amp; 
+x = tonumber('%Question.size%')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>x = y &amp;&amp; 
+x = tonumber('%Question.size%')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2010" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Solve</Name>
+          <Abbrev>S</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>S Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2538" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output21</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2058" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2154" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>([Min_acc_cost] &gt; [acc_cost] &amp;&amp; !IsNull([path])
+)
+|| 
+isnull([Min_acc_cost])
+|| IsNull([path])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>remove expensive paths</AnnotationText>
+          <DefaultAnnotationText>([Min_acc_cost] &gt; [acc_cost] &amp;&amp; !IsNull([path])
+)
+|| 
+isnull([Min_acc_cost])
+|| ...</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2442" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="x" selected="True" />
+            <SelectField field="y" selected="True" />
+            <SelectField field="acc_cost" selected="True" />
+            <SelectField field="path" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="522" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([path])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Split paths and costs</AnnotationText>
+          <DefaultAnnotationText>!IsNull([path])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Byte" />
+            <Field name="y" source="TextInput:" type="Byte" />
+            <Field name="acc_cost" source="TextInput:" type="Byte" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Byte" />
+            <Field name="y" source="TextInput:" type="Byte" />
+            <Field name="acc_cost" source="TextInput:" type="Byte" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1290" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="path" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="" />
+            <Field field="y" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1386" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1770" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1578" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Min_acc_cost" selected="True" rename="acc_cost" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="Summarize: GroupBy - x" type="Int64" />
+            <Field name="y" source="Summarize: GroupBy - y" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="Asc" />
+            <Field field="y" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1962" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="acc_cost" action="Min" rename="Min_acc_cost" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings>
+        <Position x="1722" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2250" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2346" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-15 20:08:03</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-12-15 20:08:03</StartDate>
+              <EndDate>2021-12-15 20:08:03</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] &gt; 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2070" y="30" width="564" height="96" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>We have reached to the end. Not necessarily and optimal solution, so keep searching.</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="198" width="324" height="132" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Path traveled so far. e.g.
+(0,0) (0,1) (1,1) (1,2)...(99,99)
+Also, current seen minimum cost at all positions visited so far in any path</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="90" width="324" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Input with coordinates and costs</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2034" y="186" width="600" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Iterative stream with end conditions</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1962" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]" field="iter" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[iter = [Engine.IterationNumber]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="(Multiple Sources)" type="Int64" />
+            <Field name="y" source="(Multiple Sources)" type="Int64" />
+            <Field name="acc_cost" source="(Multiple Sources)" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="iter" source="Formula: [Engine.IterationNumber]" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1674" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False">
+            <Field name="x" />
+            <Field name="y" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="Asc" />
+            <Field field="y" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="162" y="18" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>size</Name>
+          <DefaultAnnotationText>size</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="510" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>x = y &amp;&amp; 
+x = tonumber('%Question.size%')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>x = y &amp;&amp; 
+x = tonumber('%Question.size%')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Byte" />
+            <Field name="y" source="TextInput:" type="Byte" />
+            <Field name="acc_cost" source="TextInput:" type="Byte" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Byte" />
+            <Field name="y" source="TextInput:" type="Byte" />
+            <Field name="acc_cost" source="TextInput:" type="Byte" />
+            <Field name="path" size="5" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="101">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="594" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="acc_cost" action="Min" rename="Min_acc_cost" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_acc_cost" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="666" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Min_acc_cost" selected="True" input="Source_" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="dx" source="TextInput:" type="Int16" />
+            <Field name="dy" source="TextInput:" type="Int16" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1182" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[acc_cost] &lt; [Min_acc_cost]
+||
+IsNull([Min_acc_cost])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>prune based on min exit cost</AnnotationText>
+          <DefaultAnnotationText>[acc_cost] &lt; [Min_acc_cost]
+||
+IsNull([Min_acc_cost])</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="" />
+            <Field field="y" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int64" />
+            <Field name="Cost" source="TextInput:" type="Int64" />
+            <Field name="y" source="TextInput:" type="Int64" />
+            <Field name="acc_cost" source="Formula: [Cost]+ [acc_cost]" type="Int64" />
+            <Field name="path" size="100000000" source="Formula: [path]+[next_path]" type="V_WString" />
+            <Field name="Min_acc_cost" source="TextInput:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="x" order="" />
+            <Field field="y" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="102" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="Output" />
+      <Destination ToolID="102" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="4" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="True" />
+      <Destination ToolID="18" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Join" />
+      <Destination ToolID="73" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Join" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="False" />
+      <Destination ToolID="23" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="23" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="True" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="True" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="True" />
+      <Destination ToolID="74" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output9" />
+      <Destination ToolID="74" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="27" Connection="False" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="False" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="True" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="True" />
+      <Destination ToolID="101" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="True" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>size</Name>
+        <Value>49</Value>
+        <IsNumeric value="True" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>path_finder</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="1989c052-2f4a-43bb-ad14-bb2b4d10773b" />
+      <Telemetry>
+        <PreviousWorkflowId value="58bdd1fd-a8b2-4932-84a5-a79181554b18" />
+        <OriginWorkflowId value="58bdd1fd-a8b2-4932-84a5-a79181554b18" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (16)</Name>
+          <ToolId value="16" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (14)</Name>
+              <ToolId value="14" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (20)</Description>
+              <Name>Macro Output (20)</Name>
+              <ToolId value="20" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (21)</Name>
+              <ToolId value="21" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Size</Description>
+              <Name>size</Name>
+              <ToolId value="98" />
+              <Minimum value="0" />
+              <Maximum value="1000" />
+              <Increment value="1" />
+              <Default value="49" />
+              <Decimals value="0" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Path</Input>
+        <Output>Output21</Output>
+        <IterationLimit value="10000" />
+        <LimitBehavior>Warn</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="14" Selected="True" />
+        <Tool ToolId="20" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+        <Tool ToolId="73" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
