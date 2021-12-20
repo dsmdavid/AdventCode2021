@@ -1,0 +1,1487 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="402" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>stream</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="60" />
+              <Fields>
+                <Field name="Field_1" />
+                <Field name="comb" />
+                <Field name="charID" />
+                <Field name="nested" />
+                <Field name="hierarchy" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>2</c>
+                  <c>2</c>
+                  <c>1.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>3</c>
+                  <c>3</c>
+                  <c>1.1.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1225</c>
+                  <c>5</c>
+                  <c>4</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>6</c>
+                  <c>4</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>1225</c>
+                  <c>7</c>
+                  <c>4</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>9</c>
+                  <c>3</c>
+                  <c>1.1.1.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>10</c>
+                  <c>4</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1225</c>
+                  <c>11</c>
+                  <c>4</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>12</c>
+                  <c>4</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1225</c>
+                  <c>13</c>
+                  <c>4</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>14</c>
+                  <c>3</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>15</c>
+                  <c>2</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>16</c>
+                  <c>2</c>
+                  <c>1.1.1.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>17</c>
+                  <c>3</c>
+                  <c>1.1.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>18</c>
+                  <c>4</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1225</c>
+                  <c>19</c>
+                  <c>4</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>20</c>
+                  <c>4</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1225</c>
+                  <c>21</c>
+                  <c>4</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>22</c>
+                  <c>3</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>23</c>
+                  <c>3</c>
+                  <c>1.1.2.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>24</c>
+                  <c>4</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1225</c>
+                  <c>25</c>
+                  <c>4</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>26</c>
+                  <c>4</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>1225</c>
+                  <c>27</c>
+                  <c>4</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>28</c>
+                  <c>3</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>29</c>
+                  <c>2</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>30</c>
+                  <c>1</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>31</c>
+                  <c>1</c>
+                  <c>1.1.2.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>32</c>
+                  <c>2</c>
+                  <c>1.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>33</c>
+                  <c>3</c>
+                  <c>1.2.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>34</c>
+                  <c>4</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1225</c>
+                  <c>35</c>
+                  <c>4</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>36</c>
+                  <c>4</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1225</c>
+                  <c>37</c>
+                  <c>4</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>38</c>
+                  <c>3</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>39</c>
+                  <c>3</c>
+                  <c>1.2.1.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>40</c>
+                  <c>4</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1225</c>
+                  <c>41</c>
+                  <c>4</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>42</c>
+                  <c>4</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1225</c>
+                  <c>43</c>
+                  <c>4</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>44</c>
+                  <c>3</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>45</c>
+                  <c>2</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>46</c>
+                  <c>2</c>
+                  <c>1.2.1.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>47</c>
+                  <c>3</c>
+                  <c>1.2.2</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>48</c>
+                  <c>4</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>1225</c>
+                  <c>49</c>
+                  <c>4</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>50</c>
+                  <c>4</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1225</c>
+                  <c>51</c>
+                  <c>4</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>52</c>
+                  <c>3</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>53</c>
+                  <c>3</c>
+                  <c>1.2.2.1</c>
+                </r>
+                <r>
+                  <c>[</c>
+                  <c>1225</c>
+                  <c>54</c>
+                  <c>4</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>1225</c>
+                  <c>55</c>
+                  <c>4</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>,</c>
+                  <c>1225</c>
+                  <c>56</c>
+                  <c>4</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>0</c>
+                  <c>1225</c>
+                  <c>57</c>
+                  <c>4</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>58</c>
+                  <c>3</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>59</c>
+                  <c>2</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>60</c>
+                  <c>1</c>
+                  <c>1.2.2.2</c>
+                </r>
+                <r>
+                  <c>]</c>
+                  <c>1225</c>
+                  <c>61</c>
+                  <c>0</c>
+                  <c>1.2.2.2</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="498" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_CountMatches([hierarchy],'\.')" field="items" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[items = REGEX_CountMatches([hierarchy],'\.')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="582" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="items" action="Max" rename="Max_items" />
+            <SummarizeField field="comb" action="GroupBy" rename="comb" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Max_items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="comb" source="Summarize: GroupBy - comb" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="678" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="items" />
+            <Field field="comb" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Max_items" />
+            <Field field="comb" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Max_items" selected="False" input="Right_" />
+                <SelectField field="Right_comb" selected="False" rename="Right_comb" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="items" />
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="items" order="" />
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Max_items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="comb" source="Summarize: GroupBy - comb" type="Int16" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Max_items" />
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="750" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="comb" order="Ascending" />
+            <Field field="charID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>comb - Ascending
+charID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="858" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False">
+            <Field name="hierarchy" />
+            <Field name="comb" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="hierarchy" order="Asc" />
+            <Field field="comb" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="846" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Field_1] not in ('[',',',']')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Field_1] not in ('[',',',']')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="918" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="True" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" source="TextInput:" type="Int64" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1002" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>charID</UpdateField_Name>
+          <CreateField_Name>order</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>[Row-1:order]+1</Expression>
+          <GroupByFields>
+            <Field field="comb" />
+            <Field field="hierarchy" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Row-1:order]+1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" source="TextInput:" type="Int64" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field description="Formula: [Row-1:order]+1" name="order" source="Formula: [Row-1:order]+1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="Asc" />
+            <Field field="hierarchy" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1086" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="comb" />
+            <Field field="hierarchy" />
+          </GroupFields>
+          <HeaderField field="order" />
+          <DataField field="Field_1" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="CrossTab:Group:Sum:" type="Int16" />
+            <Field name="hierarchy" size="7" source="CrossTab:Group:Sum:" type="String" />
+            <Field name="1" source="CrossTab:Header:order:1:Sum:" type="Int64" />
+            <Field name="2" source="CrossTab:Header:order:2:Sum:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="Asc" />
+            <Field field="hierarchy" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1158" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="3*[1] + 2*[2]" field="magnitud" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[magnitud = 3*[1] + 2*[2]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="CrossTab:Group:Sum:" type="Int16" />
+            <Field name="hierarchy" size="7" source="CrossTab:Group:Sum:" type="String" />
+            <Field name="1" source="CrossTab:Header:order:1:Sum:" type="Int64" />
+            <Field name="2" source="CrossTab:Header:order:2:Sum:" type="Int64" />
+            <Field name="magnitud" source="Formula: 3*[1] + 2*[2]" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="Asc" />
+            <Field field="hierarchy" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1242" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="hierarchy" />
+            <Field field="comb" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="hierarchy" />
+            <Field field="comb" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Field_1" selected="False" input="Left_" />
+                <SelectField field="Right_comb" selected="False" rename="Right_comb" input="Right_" />
+                <SelectField field="Right_hierarchy" selected="False" rename="Right_hierarchy" input="Right_" />
+                <SelectField field="Right_1" selected="False" input="Right_" />
+                <SelectField field="Right_2" selected="False" input="Right_" />
+                <SelectField field="Right_magnitud" selected="True" rename="Field_1" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="TextInput:" type="String" />
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="hierarchy" />
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="TextInput:" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" source="Formula: 3*[1] + 2*[2]" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="hierarchy" order="" />
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="comb" source="CrossTab:Group:Sum:" type="Int16" />
+            <Field name="hierarchy" size="7" source="CrossTab:Group:Sum:" type="String" />
+            <Field name="1" source="CrossTab:Header:order:1:Sum:" type="Int64" />
+            <Field name="2" source="CrossTab:Header:order:2:Sum:" type="Int64" />
+            <Field name="magnitud" source="Formula: 3*[1] + 2*[2]" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="hierarchy" />
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1434" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1554" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="comb" order="Ascending" />
+            <Field field="charID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>comb - Ascending
+charID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1338" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace([hierarchy],&#xA;'(.*?)\.\d+$','\1')&#xA;" field="hierarchy" size="7" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[hierarchy = REGEX_Replace([hierarchy],
+'(.*?)\.\d+$','\1')
+
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="Formula: REGEX_Replace([hierarchy],&#xA;'(.*?)\.\d+$','\1')&#xA;" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" source="Formula: 3*[1] + 2*[2]" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1914" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-19 17:12:55</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-19 17:12:55</StartDate>
+              <EndDate>2021-12-19 17:12:55</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] &gt; 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2106" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2106" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>magnitude</Name>
+          <Abbrev>M</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>M Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2010" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="comb" selected="True" />
+            <SelectField field="charID" selected="True" />
+            <SelectField field="nested" selected="True" />
+            <SelectField field="hierarchy" selected="True" />
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1626" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="comb" action="GroupBy" rename="comb" />
+            <SummarizeField field="comb" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="Summarize: GroupBy - comb" type="Int16" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1710" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="comb" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="comb" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_comb" selected="False" rename="Right_comb" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="20" source="(Multiple Sources)" type="V_String" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="comb" source="Summarize: GroupBy - comb" type="Int16" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="comb" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2010" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="comb" selected="True" />
+            <SelectField field="charID" selected="True" />
+            <SelectField field="nested" selected="True" />
+            <SelectField field="hierarchy" selected="True" />
+            <SelectField field="items" selected="True" />
+            <SelectField field="Field_1" selected="True" size="10000" />
+            <SelectField field="Count" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Int16" />
+            <Field name="charID" source="TextInput:" type="Byte" />
+            <Field name="nested" source="TextInput:" type="Byte" />
+            <Field name="hierarchy" size="7" source="(Multiple Sources)" type="String" />
+            <Field name="items" source="Formula: REGEX_CountMatches([hierarchy],'\.')" type="Int64" />
+            <Field name="Field_1" size="10000" source="(Multiple Sources)" type="V_String" />
+            <Field name="Count" source="Summarize: Count - comb" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="comb" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="68" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="True" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="False" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Join" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>mangitizer</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="6792d0c7-1811-46bb-ad0a-e19c7c5bcc3c" />
+      <Telemetry>
+        <PreviousWorkflowId value="9cf26cd3-e212-4ad7-8992-6da021e86d7c" />
+        <OriginWorkflowId value="9cf26cd3-e212-4ad7-8992-6da021e86d7c" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (63)</Name>
+          <ToolId value="63" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (64)</Description>
+              <Name>Macro Output (64)</Name>
+              <ToolId value="64" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (65)</Description>
+              <Name>Macro Output (65)</Name>
+              <ToolId value="65" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>stream</Input>
+        <Output>iter</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="64" Selected="True" />
+        <Tool ToolId="65" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

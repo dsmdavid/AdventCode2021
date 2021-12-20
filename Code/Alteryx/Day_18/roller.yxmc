@@ -1,0 +1,854 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="138" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="90" />
+              <Fields>
+                <Field name="comb" />
+                <Field name="Field_1" />
+                <Field name="Source_Field_1" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>[[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>11</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>12</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>13</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>14</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>15</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>16</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>17</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>18</c>
+                  <c>[[[[5,[2,8]],4],[5,[[9,9],0]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>19</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>20</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>21</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>22</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>23</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>24</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>25</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>26</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>27</c>
+                  <c>[[6,[[[6,2],[5,6]],[[7,6],[4,7]]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>28</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>29</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>30</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>31</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>32</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>33</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>34</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>35</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>36</c>
+                  <c>[[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>37</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>38</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>39</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>40</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>41</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>42</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>43</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>44</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>45</c>
+                  <c>[[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>46</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>47</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>48</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>49</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>50</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>51</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>52</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>53</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>54</c>
+                  <c>[[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>55</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>56</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>57</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>58</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>59</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>60</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>61</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>62</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>63</c>
+                  <c>[[[[[5,4],[7,7]],8],[[8,3],8]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>64</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>65</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>66</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>67</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>68</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>69</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>70</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>71</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+                <r>
+                  <c>72</c>
+                  <c>[[[9,3],[[9,9],[6,[4,9]]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>73</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>74</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>75</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>76</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>77</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>78</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>79</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>80</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>81</c>
+                  <c>[[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]],[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]]</c>
+                  <c>[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]]</c>
+                </r>
+                <r>
+                  <c>82</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]]</c>
+                  <c>[[[0,[5,8]],[[1,7],[9,6]]],[[4,[1,2]],[[1,4],2]]]</c>
+                </r>
+                <r>
+                  <c>83</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[[5,[2,8]],4],[5,[[9,9],0]]]]</c>
+                  <c>[[[5,[2,8]],4],[5,[[9,9],0]]]</c>
+                </r>
+                <r>
+                  <c>84</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]]</c>
+                  <c>[6,[[[6,2],[5,6]],[[7,6],[4,7]]]]</c>
+                </r>
+                <r>
+                  <c>85</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]]</c>
+                  <c>[[[6,[0,7]],[0,9]],[4,[9,[9,0]]]]</c>
+                </r>
+                <r>
+                  <c>86</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]]</c>
+                  <c>[[[7,[6,4]],[3,[1,3]]],[[[5,5],1],9]]</c>
+                </r>
+                <r>
+                  <c>87</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]]</c>
+                  <c>[[6,[[7,3],[3,2]]],[[[3,8],[5,7]],4]]</c>
+                </r>
+                <r>
+                  <c>88</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[[[5,4],[7,7]],8],[[8,3],8]]]</c>
+                  <c>[[[[5,4],[7,7]],8],[[8,3],8]]</c>
+                </r>
+                <r>
+                  <c>89</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[9,3],[[9,9],[6,[4,9]]]]]</c>
+                  <c>[[9,3],[[9,9],[6,[4,9]]]]</c>
+                </r>
+                <r>
+                  <c>90</c>
+                  <c>[[[[[5,2],5],[8,[3,7]]],[[5,[7,5]],[4,4]]],[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]]</c>
+                  <c>[[2,[[7,7],7]],[[5,8],[[9,3],[0,2]]]]</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="93" source="TextInput:" type="V_String" />
+            <Field name="Source_Field_1" size="49" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="234" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>comb</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-19 17:25:20</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-19 17:25:20</StartDate>
+              <EndDate>2021-12-19 17:25:20</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[comb] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="93" source="TextInput:" type="V_String" />
+            <Field name="Source_Field_1" size="49" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="comb" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="93" source="TextInput:" type="V_String" />
+            <Field name="Source_Field_1" size="49" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings>
+        <Position x="426" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Simplified">
+          <RecordInfo>
+            <Field name="Field_1" size="1073741823" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="iter" source="Formula: [Engine.IterationNumber]+1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="iter">
+          <RecordInfo>
+            <Field name="Field_1" size="1000000" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\simplifier.yxmc" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="342" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="93" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="510" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Field_1" selected="True" input="Target_" />
+                <SelectField field="Target_iter" selected="True" input="Target_" />
+                <SelectField field="Source_comb" selected="True" input="Source_" />
+                <SelectField field="Source_Field_1" selected="False" rename="Source_Field_1" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1073741823" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="iter" source="Formula: [Engine.IterationNumber]+1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="comb" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="330" y="30" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Control Parameter (7)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="282" y="84" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="594" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output9</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Action" />
+      <Destination ToolID="2" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="True" />
+      <Destination ToolID="5" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Simplified" />
+      <Destination ToolID="5" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="7" Connection="Question" />
+      <Destination ToolID="8" Connection="Question" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.Control Parameter (7)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (1)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (9)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>roller</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="595cce3b-ac83-4492-993e-e40b17d6ae25" />
+      <Telemetry>
+        <PreviousWorkflowId value="68e8f51f-28b3-4286-98f0-316f3ba649ee" />
+        <OriginWorkflowId value="68e8f51f-28b3-4286-98f0-316f3ba649ee" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="8" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>2/Simple/Operands/Operand</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (6)</Name>
+          <ToolId value="6" />
+          <Questions>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>Control Parameter (7)</Description>
+              <Name>Control Parameter (7)</Name>
+              <ToolId value="7" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (9)</Description>
+              <Name>Macro Output (9)</Name>
+              <ToolId value="9" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>Control Parameter (7)</Name>
+            <Description>Control Parameter (7)</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="3" Selected="True" />
+        <Tool ToolId="9" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

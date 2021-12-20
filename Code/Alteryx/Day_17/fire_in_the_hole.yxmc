@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="414" y="234" />
+        <Position x="246" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -44,7 +44,7 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="222" y="234" />
+        <Position x="54" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -8898,7 +8898,7 @@ Vy = [Vy...</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText>Input</DefaultAnnotationText>
-          <Left value="False" />
+          <Left value="True" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
@@ -8921,25 +8921,27 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="510" y="234" />
+        <Position x="342" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[X] &lt;= [Xmax]
-&amp;&amp;
-[Y] &gt;= [Ymin]
-&amp;&amp;
-[Y] &lt;= [max_height]</Expression>
+          <Expression><![CDATA[[X] <= [Xmax]
+&&
+[Y] >= [Ymin]
+&&
+[Y] <= [max_height]
+]]></Expression>
           <Mode>Custom</Mode>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>valid trajectories</AnnotationText>
-          <DefaultAnnotationText>[X] &lt;= [Xmax]
-&amp;&amp;
-[Y] &gt;= [Ymin]
-&amp;&amp;
-[Y] &lt;= [max_height]</DefaultAnnotationText>
+          <DefaultAnnotationText><![CDATA[[X] <= [Xmax]
+&&
+[Y] >= [Ymin]
+&&
+[Y] <= [max_height]
+]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="True">
@@ -8979,7 +8981,7 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="606" y="222" />
+        <Position x="438" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -9032,7 +9034,7 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="318" y="234" />
+        <Position x="150" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -9083,6 +9085,7 @@ Vy = [Vy...</DefaultAnnotationText>
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -9092,7 +9095,7 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="726" y="174" />
+        <Position x="558" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -9109,7 +9112,7 @@ Vy = [Vy...</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="738" y="270" />
+        <Position x="570" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -9241,6 +9244,7 @@ Vy = [Vy...</DefaultAnnotationText>
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
+        <Tool ToolId="4" Selected="True" />
         <Tool ToolId="9" Selected="True" />
         <Tool ToolId="10" Selected="True" />
       </Wiz_OpenOutputTools>

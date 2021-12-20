@@ -1,0 +1,2118 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1050" y="558" width="876" height="192" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>split</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1050" y="66" width="876" height="468" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>explode</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="78" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="Field_1" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>[[[[0,7],4],[15,[0,13]]],[1,1]]</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="162" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <RegExExpression value="(\d+|[\[\]\,])" />
+          <CaseInsensitve value="True" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="True" />
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="String" size="31" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="450" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Field_1</UpdateField_Name>
+          <CreateField_Name>nested</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if
+[Field_1] = '['
+then [Row-1:nested]+1
+elseif [Field_1] = ']' then [Row-1:nested] - 1
+else [Row-1:nested] endif</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if
+[Field_1] = '['
+then [Row-1:nested]+1
+elseif [Field_1] = '...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="354" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>charID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>nested</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-19 11:20:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>4</Operand>
+              <StartDate>2021-12-19 11:20:01</StartDate>
+              <EndDate>2021-12-19 11:20:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[nested] &gt; 4</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="642" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="738" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>RowCount</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <Expression_Init>[charID]</Expression_Init>
+          <Expression_Cond>RowCount &lt;= [charID]+4</Expression_Cond>
+          <Expression_Loop>RowCount + 1</Expression_Loop>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="930" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RowCount" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="charID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RowCount" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RowCount" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="charID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="834" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="charID" selected="False" />
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="nested" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1122" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[charID] &lt; [Min_RowCount]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[charID] &lt; [Min_RowCount]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="930" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RowCount" action="Min" rename="Min_RowCount" />
+            <SummarizeField field="RowCount" action="Max" rename="Max_RowCount" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1026" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1230" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Field_1] not in ('[',',',']')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Field_1] not in ('[',',',']')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1362" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1338" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Field_1] not in ('[',',',']')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Field_1] not in ('[',',',']')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1470" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1206" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[charID] &gt;[Max_RowCount]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[charID] &gt;[Max_RowCount]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings>
+        <Position x="1074" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Ranges">2
+4</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RowCount" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="SelectRecords.yxmc" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1254" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1170" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RowCount" selected="False" />
+            <SelectField field="charID" selected="False" />
+            <SelectField field="nested" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1254" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1458" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1542" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1602" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1734" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="tostring(&#xA;	ToNumber([Field_1])&#xA;	+ ToNumber([Source_Field_1])&#xA;)" field="Field_1" size="33" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Field_1 = tostring(
+	ToNumber([Field_1])
+	+ ToNumber([Source_Field_1])
+)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="Formula: tostring(&#xA; ToNumber([Field_1])&#xA; + ToNumber([Source_Field_1])&#xA;)" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1170" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RowCount" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1254" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'0'" field="Field_1" size="33" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Field_1 = '0'
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="Formula: '0'" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RowCount" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1950" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="(Multiple Sources)" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Right_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2046" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="charID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>charID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RowCount" type="Int32" />
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="(Multiple Sources)" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Right_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2130" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Field_1" action="Concat" rename="Concat_Field_1">
+              <Concat_Start />
+              <Separator />
+              <Concat_End />
+            </SummarizeField>
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="2147483647" source="Summarize: Concat - Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1830" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="charID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="charID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_charID" selected="False" rename="Right_charID" input="Right_" />
+                <SelectField field="Right_Field_1" selected="False" rename="Right_Field_1" input="Right_" />
+                <SelectField field="Right_nested" selected="False" rename="Right_nested" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="Formula: tostring(&#xA; ToNumber([Field_1])&#xA; + ToNumber([Source_Field_1])&#xA;)" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="charID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="Formula: tostring(&#xA; ToNumber([Field_1])&#xA; + ToNumber([Source_Field_1])&#xA;)" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Min_RowCount" type="Int32" />
+            <Field name="Max_RowCount" type="Int32" />
+            <Field name="Source_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Right_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="charID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings>
+        <Position x="582" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="666" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="762" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-19 12:24:52</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-12-19 12:24:52</StartDate>
+              <EndDate>2021-12-19 12:24:52</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] &gt; 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1278" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>ToNumber([Field_1]) &gt; 9</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ToNumber([Field_1]) &gt; 9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1194" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1350" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1446" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="charID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="charID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_charID" selected="False" input="Right_" />
+                <SelectField field="Right_Field_1" selected="False" input="Right_" />
+                <SelectField field="Right_nested" selected="False" input="Right_" />
+                <SelectField field="Right_Count" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="charID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="TextInput:" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="charID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1542" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'[' + &#xA;tostring(&#xA;FLOOR(&#xA;	ToNumber([Field_1])/2)&#xA;	)&#xA;+','+&#xA;tostring(&#xA;CEIL(&#xA;	ToNumber([Field_1])/2)&#xA;	)&#xA;+']'&#xA;" field="Field_1" size="31" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Field_1 = '[' + 
+tostring(
+FLOOR(
+	ToNumber([Field_1])/2)
+	)
++','+
+tostring(
+CEI...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="charID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Field_1" size="31" source="Formula: '[' + &#xA;tostring(&#xA;FLOOR(&#xA; ToNumber([Field_1])/2)&#xA; )&#xA;+','+&#xA;tostring(&#xA;CEIL(&#xA; ToNumber([Field_1])/2)&#xA; )&#xA;+']'&#xA;" type="String" />
+            <Field description="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" name="nested" source="Formula: if&#xA;[Field_1] = '['&#xA;then [Row-1:nested]+1&#xA;elseif [Field_1] = ']' then [Row-1:nested] - 1&#xA;else [Row-1:nested] endif" type="Int32" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="charID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings>
+        <Position x="1206" y="894" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1506" y="942" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Field_1" selected="True" rename="Concat_Field_1" input="Target_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1626" y="942" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count] = 0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="31" source="TextInput:" type="String" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2358" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Concat_Field_1" selected="True" rename="Field_1" input="Target_" />
+                <SelectField field="Source_Field_1" selected="True" rename="Source" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="2147483647" source="(Multiple Sources)" type="V_String" />
+            <Field name="Source" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2442" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Field_1] != [Source]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Field_1] != [Source]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="2147483647" source="(Multiple Sources)" type="V_String" />
+            <Field name="Source" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="2147483647" source="(Multiple Sources)" type="V_String" />
+            <Field name="Source" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1242" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1350" y="954" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Count" action="Max" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2550" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Source" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="2147483647" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2238" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="2147483647" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1746" y="930" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Concat_Field_1" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Field_1" size="31" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2682" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2682" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Simplified</Name>
+          <Abbrev>S</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>S Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="46" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="46" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="44" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="44" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="35" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output9" />
+      <Destination ToolID="35" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="34" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Right" />
+      <Destination ToolID="13" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Right" />
+      <Destination ToolID="32" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="32" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="True" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="True" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="False" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="True" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="23" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="23" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="24" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="32" Connection="Join" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="32" Connection="Right" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="41" Connection="Right" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="34" Connection="Output9" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="43" Connection="Output9" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="False" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="43" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="41" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="41" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Join" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="True" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="True" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="False" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (1)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (55)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (56)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>david_day_18</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="db8b0a3a-a3b9-479e-9118-a75216b13189" />
+      <Telemetry>
+        <PreviousWorkflowId value="d6f6ba0c-794a-432e-ab9e-127ae722c512" />
+        <OriginWorkflowId value="f89dfcd5-12f4-4e2e-871e-2c9c64a3f2c6" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (54)</Name>
+          <ToolId value="54" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (55)</Description>
+              <Name>Macro Output (55)</Name>
+              <ToolId value="55" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (56)</Description>
+              <Name>Macro Output (56)</Name>
+              <ToolId value="56" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="19" Selected="True" />
+        <Tool ToolId="34" Selected="True" />
+        <Tool ToolId="43" Selected="True" />
+        <Tool ToolId="55" Selected="True" />
+        <Tool ToolId="56" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="174" y="186" />
+        <Position x="66" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -27,7 +27,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="282" y="186" />
+        <Position x="174" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -65,7 +65,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="378" y="186" />
+        <Position x="270" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -84,7 +84,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="534" y="186" />
+        <Position x="426" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -107,7 +107,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="618" y="186" />
+        <Position x="510" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -130,7 +130,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="714" y="186" />
+        <Position x="606" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -160,7 +160,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="474" y="186" />
+        <Position x="366" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -183,7 +183,7 @@ t = 0
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="810" y="186" />
+        <Position x="702" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -202,30 +202,27 @@ Vy = [Vy0]
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="11">
+    <Node ToolID="22">
       <GuiSettings>
-        <Position x="894" y="186" />
+        <Position x="786" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name />
+          <Name>fire_in_the_hole (11)</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="fire_in_the_hole.yxmc" />
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1086" y="102" />
+        <Position x="978" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_14428_071eeabeba2d44b18531193c42dbd19b_\Engine_12884_e464dc1833df42d2b618ed65d12731a6_.yxdb</TempFile>
+          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_22960_408a0db660174044a52780ed03215789_\Engine_3704_e00d99fe124b4f8bb206180564a083df_.yxdb</TempFile>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -237,11 +234,11 @@ Vy = [Vy0]
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="978" y="222" />
+        <Position x="870" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_14428_071eeabeba2d44b18531193c42dbd19b_\Engine_12884_0eae49606fe94c53b03b32123533460c_.yxdb</TempFile>
+          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_22960_408a0db660174044a52780ed03215789_\Engine_3704_d0f4475228054aa1abfbc402c41c59ab_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -265,7 +262,7 @@ Vy = [Vy0]
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="990" y="114" />
+        <Position x="882" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -283,7 +280,7 @@ Vy = [Vy0]
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="354" y="138" width="100" height="40" />
+        <Position x="246" y="90" width="100" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -303,7 +300,7 @@ Vy = [Vy0]
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="510" y="138" width="444" height="40" />
+        <Position x="402" y="90" width="444" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -323,7 +320,7 @@ Vy = [Vy0]
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="162" y="102" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -373,14 +370,14 @@ Vy = [Vy0]
     </Connection>
     <Connection>
       <Origin ToolID="10" Connection="Output" />
-      <Destination ToolID="11" Connection="Input4" />
+      <Destination ToolID="22" Connection="Input4" />
     </Connection>
     <Connection>
-      <Origin ToolID="11" Connection="Output10" />
+      <Origin ToolID="22" Connection="Output10" />
       <Destination ToolID="13" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="11" Connection="Boom" />
+      <Origin ToolID="22" Connection="Boom" />
       <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
