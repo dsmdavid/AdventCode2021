@@ -1,0 +1,978 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="210" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev>I</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="Count" />
+                <Field name="points_1" />
+                <Field name="points_2" />
+                <Field name="pos_1" />
+                <Field name="pos_2" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>0</c>
+                  <c>0</c>
+                  <c>4</c>
+                  <c>8</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>I Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="TextInput:" type="Byte" />
+            <Field name="points_1" source="TextInput:" type="Byte" />
+            <Field name="points_2" source="TextInput:" type="Byte" />
+            <Field name="pos_1" source="TextInput:" type="Byte" />
+            <Field name="pos_2" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="534" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Count" selected="True" rename="Source_Count" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="TextInput:" type="Int64" />
+            <Field name="points_1" source="TextInput:" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="TextInput:" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="210" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Dice</Name>
+          <Abbrev>D</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="7" />
+              <Fields>
+                <Field name="advance" />
+                <Field name="Count" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>7</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>6</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>D Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="advance" source="TextInput:" type="Byte" />
+            <Field name="Count" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="630" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="mod(pos_1 + [advance],10)" field="pos_1" size="2" type="Int16" />
+            <FormulaField expression="[points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" field="points_1" size="2" type="Int16" />
+            <FormulaField expression="[Count] * [Source_Count]" field="Count" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>pos_1 = mod(pos_1 + [advance],10)
+points_1 = [points_1]
++ if pos_1 = 0 then 10 e...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="822" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_advance" selected="False" input="Target_" />
+                <SelectField field="Target_Source_Count" selected="False" rename="Target_Source_Count" input="Target_" />
+                <SelectField field="Source_Count" selected="True" rename="Source_Count" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="918" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="mod(pos_2 + [advance],10)" field="pos_2" size="2" type="Int16" />
+            <FormulaField expression="[points_2]&#xA;+ if [pos_2] = 0 then 10 else [pos_2] endif" field="points_2" size="2" type="Int16" />
+            <FormulaField expression="[Count] * [Source_Count]" field="Count" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>pos_2 = mod(pos_2 + [advance],10)
+points_2 = [points_2]
++ if [pos_2] = 0 then 10...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="Formula: [points_2]&#xA;+ if [pos_2] = 0 then 10 else [pos_2] endif" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="Formula: mod(pos_2 + [advance],10)" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="726" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[points_1] < 21 ]]></Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[[points_1] < 21 ]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1014" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[points_2] < 21 ]]></Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[[points_2] < 21 ]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="Formula: [points_2]&#xA;+ if [pos_2] = 0 then 10 else [pos_2] endif" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="Formula: mod(pos_2 + [advance],10)" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="Formula: [points_2]&#xA;+ if [pos_2] = 0 then 10 else [pos_2] endif" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="Formula: mod(pos_2 + [advance],10)" type="Int16" />
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Source_Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1302" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" />
+            <SelectField field="points_1" selected="True" />
+            <SelectField field="points_2" selected="True" />
+            <SelectField field="pos_1" selected="True" />
+            <SelectField field="pos_2" selected="True" />
+            <SelectField field="RecordID" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="points_1" source="Summarize: GroupBy - points_1" type="Int16" />
+            <Field name="points_2" source="Summarize: GroupBy - points_2" type="Int16" />
+            <Field name="pos_1" source="Summarize: GroupBy - pos_1" type="Int16" />
+            <Field name="pos_2" source="Summarize: GroupBy - pos_2" type="Int16" />
+            <Field name="Count" source="Summarize: Sum - Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="points_1" order="Asc" />
+            <Field field="points_2" order="Asc" />
+            <Field field="pos_1" order="Asc" />
+            <Field field="pos_2" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1098" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" />
+            <SelectField field="points_1" selected="True" />
+            <SelectField field="points_2" selected="True" />
+            <SelectField field="pos_1" selected="True" />
+            <SelectField field="pos_2" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="Formula: [points_2]&#xA;+ if [pos_2] = 0 then 10 else [pos_2] endif" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="Formula: mod(pos_2 + [advance],10)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1206" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="(Multiple Sources)" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="(Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1410" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1494" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>winners</Name>
+          <Abbrev>W</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>W Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="342" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" type="Int64" size="8" />
+            <SelectField field="points_1" selected="True" type="Int16" size="2" />
+            <SelectField field="points_2" selected="True" type="Int16" size="2" />
+            <SelectField field="pos_1" selected="True" type="Int16" size="2" />
+            <SelectField field="pos_2" selected="True" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="TextInput:" type="Int64" />
+            <Field name="points_1" source="TextInput:" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="TextInput:" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="342" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="advance" selected="True" type="Int16" size="2" />
+            <SelectField field="Count" selected="True" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="advance" source="TextInput:" type="Int16" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1302" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" />
+            <SelectField field="points_1" selected="True" type="Int64" size="8" />
+            <SelectField field="points_2" selected="True" type="Int64" size="8" />
+            <SelectField field="pos_1" selected="True" type="Int64" size="8" />
+            <SelectField field="pos_2" selected="True" type="Int64" size="8" />
+            <SelectField field="Target_Source_Count" selected="False" type="Int64" size="8" />
+            <SelectField field="advance" selected="False" type="Int64" size="8" />
+            <SelectField field="Source_Count" selected="False" type="Int64" size="8" />
+            <SelectField field="RecordID" selected="False" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int64" />
+            <Field name="points_2" source="(Multiple Sources)" type="Int64" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int64" />
+            <Field name="pos_2" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1194" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="points_1" action="GroupBy" rename="points_1" />
+            <SummarizeField field="points_2" action="GroupBy" rename="points_2" />
+            <SummarizeField field="pos_1" action="GroupBy" rename="pos_1" />
+            <SummarizeField field="pos_2" action="GroupBy" rename="pos_2" />
+            <SummarizeField field="Count" action="Sum" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="points_1" source="Summarize: GroupBy - points_1" type="Int16" />
+            <Field name="points_2" source="Summarize: GroupBy - points_2" type="Int16" />
+            <Field name="pos_1" source="Summarize: GroupBy - pos_1" type="Int16" />
+            <Field name="pos_2" source="Summarize: GroupBy - pos_2" type="Int16" />
+            <Field name="Count" source="Summarize: Sum - Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="points_1" order="Asc" />
+            <Field field="points_2" order="Asc" />
+            <Field field="pos_1" order="Asc" />
+            <Field field="pos_2" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1098" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="True" />
+            <SelectField field="points_1" selected="True" />
+            <SelectField field="points_2" selected="True" />
+            <SelectField field="pos_1" selected="True" />
+            <SelectField field="pos_2" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int16" />
+            <Field name="points_2" source="TextInput:" type="Int16" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int16" />
+            <Field name="pos_2" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1398" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]+1" field="iter" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[iter = [Engine.IterationNumber]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Formula: [Count] * [Source_Count]" type="Int64" />
+            <Field name="points_1" source="Formula: [points_1]&#xA;+ if pos_1 = 0 then 10 else pos_1 endif" type="Int64" />
+            <Field name="points_2" source="(Multiple Sources)" type="Int64" />
+            <Field name="pos_1" source="Formula: mod(pos_1 + [advance],10)" type="Int64" />
+            <Field name="pos_2" source="(Multiple Sources)" type="Int64" />
+            <Field name="iter" source="Formula: [Engine.IterationNumber]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="234" y="138" width="1200" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>One Round</Text>
+          <Font name="Arial" size="21.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="534" y="258" width="264" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Player 1</Text>
+          <Font name="Arial" size="21.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="822" y="258" width="276" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Player 2</Text>
+          <Font name="Arial" size="21.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1194" y="258" width="240" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Reduce</Text>
+          <Font name="Arial" size="21.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1086" y="486" width="240" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Winners</Text>
+          <Font name="Arial" size="21.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="11" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="11" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="False" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="False" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="True" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="8" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="8" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>iter</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="42e1ec1d-dbbb-4f15-8ca8-5e2c9af784ff" />
+      <Telemetry>
+        <PreviousWorkflowId value="b89f3458-a717-4c94-9ff9-ab8a2e883912" />
+        <OriginWorkflowId value="b89f3458-a717-4c94-9ff9-ab8a2e883912" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (20)</Name>
+          <ToolId value="20" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (9)</Name>
+              <ToolId value="9" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (21)</Name>
+              <ToolId value="21" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (22)</Description>
+              <Name>Macro Output (22)</Name>
+              <ToolId value="22" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input</Input>
+        <Output>iter</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Warn</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="9" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+        <Tool ToolId="22" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
